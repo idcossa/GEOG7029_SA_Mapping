@@ -36,17 +36,22 @@
         <script src="js/leaflet-control-geocoder.Geocoder.js"></script>
         <script src="js/leaflet-measure.js"></script>
         <script src="js/leaflet-search.js"></script>
-        <script src="data/PopulationDensity2021_1.js"></script>
-        <script src="data/PopulationEstimate2021_2.js"></script>
-        <script src="data/PopulationDensity2018_3.js"></script>
-        <script src="data/Population2018_4.js"></script>
-        <script src="data/KZNCovid19August2021_5.js"></script>
-        <script src="data/KZNCovid19July2021_6.js"></script>
-        <script src="data/KZNCovid19January2021_7.js"></script>
-        <script src="data/KZNCovid19July2020_8.js"></script>
-        <script src="data/Provinces_9.js"></script>
-        <script src="data/Hospitals_10.js"></script>
-        <script src="data/Towns_11.js"></script>
+        <script src="data/Provinces_1.js"></script>
+        <script src="data/PopulationDensity2018_2.js"></script>
+        <script src="data/Population2018_3.js"></script>
+        <script src="data/PopulationDensity2020_4.js"></script>
+        <script src="data/PopulationEstimate2020_5.js"></script>
+        <script src="data/PopulationDensity2021_6.js"></script>
+        <script src="data/PopulationEstimate2021_7.js"></script>
+        <script src="data/YearlyCases2020_8.js"></script>
+        <script src="data/YearlyCases2021_9.js"></script>
+        <script src="data/HalfYearlyCases2022_10.js"></script>
+        <script src="data/KZNCovid19July2020_11.js"></script>
+        <script src="data/KZNCovid19Jan2021_12.js"></script>
+        <script src="data/KZNCovid19July2021_13.js"></script>
+        <script src="data/KZNCovid19Aug2021_14.js"></script>
+        <script src="data/Hospitals_15.js"></script>
+        <script src="data/Towns_16.js"></script>
         <script>
         var highlightLayer;
         function highlightFeature(e) {
@@ -103,7 +108,7 @@
         });
         layer_OSMStandard_0;
         map.addLayer(layer_OSMStandard_0);
-        function pop_PopulationDensity2021_1(feature, layer) {
+        function pop_Provinces_1(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (i in e.target._eventParents) {
@@ -121,365 +126,53 @@
             });
             var popupContent = '<table>\
                     <tr>\
-                        <th scope="row">ID</th>\
-                        <td>' + (feature.properties['ID'] !== null ? autolinker.link(feature.properties['ID'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['ID'] !== null ? autolinker.link(feature.properties['ID'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">PROVINCE</th>\
-                        <td>' + (feature.properties['PROVINCE'] !== null ? autolinker.link(feature.properties['PROVINCE'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['PROVINCE'] !== null ? autolinker.link(feature.properties['PROVINCE'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">CODE</th>\
-                        <td>' + (feature.properties['CODE'] !== null ? autolinker.link(feature.properties['CODE'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['CODE'] !== null ? autolinker.link(feature.properties['CODE'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">TYPE</th>\
-                        <td>' + (feature.properties['TYPE'] !== null ? autolinker.link(feature.properties['TYPE'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['TYPE'] !== null ? autolinker.link(feature.properties['TYPE'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Shape_Leng</th>\
-                        <td>' + (feature.properties['Shape_Leng'] !== null ? autolinker.link(feature.properties['Shape_Leng'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">Shape_Area</th>\
-                        <td>' + (feature.properties['Shape_Area'] !== null ? autolinker.link(feature.properties['Shape_Area'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">Daily_Test</th>\
-                        <td>' + (feature.properties['Daily_Test'] !== null ? autolinker.link(feature.properties['Daily_Test'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">District</th>\
-                        <td>' + (feature.properties['District'] !== null ? autolinker.link(feature.properties['District'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">Population</th>\
-                        <td>' + (feature.properties['Population'] !== null ? autolinker.link(feature.properties['Population'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">Populati_1</th>\
-                        <td>' + (feature.properties['Populati_1'] !== null ? autolinker.link(feature.properties['Populati_1'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">Populati_2</th>\
-                        <td>' + (feature.properties['Populati_2'] !== null ? autolinker.link(feature.properties['Populati_2'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">Area</th>\
-                        <td>' + (feature.properties['Area'] !== null ? autolinker.link(feature.properties['Area'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">PD_Y2019</th>\
-                        <td>' + (feature.properties['PD_Y2019'] !== null ? autolinker.link(feature.properties['PD_Y2019'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">PD_Y2020</th>\
-                        <td>' + (feature.properties['PD_Y2020'] !== null ? autolinker.link(feature.properties['PD_Y2020'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">PD_Y2021</th>\
-                        <td>' + (feature.properties['PD_Y2021'] !== null ? autolinker.link(feature.properties['PD_Y2021'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['Shape_Leng'] !== null ? autolinker.link(feature.properties['Shape_Leng'].toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_PopulationDensity2021_1_0(feature) {
-            if (feature.properties['PD_Y2021'] >= 4.591860 && feature.properties['PD_Y2021'] <= 4.591860 ) {
-                return {
-                pane: 'pane_PopulationDensity2021_1',
+        function style_Provinces_1_0() {
+            return {
+                pane: 'pane_Provinces_1',
                 opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
+                color: 'rgba(34,65,222,1.0)',
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(255,245,240,1.0)',
+                fillColor: 'rgba(146,146,146,1.0)',
                 interactive: true,
-            }
-            }
-            if (feature.properties['PD_Y2021'] >= 4.591860 && feature.properties['PD_Y2021'] <= 4.591860 ) {
-                return {
-                pane: 'pane_PopulationDensity2021_1',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(253,204,184,1.0)',
-                interactive: true,
-            }
-            }
-            if (feature.properties['PD_Y2021'] >= 4.591860 && feature.properties['PD_Y2021'] <= 48.382732 ) {
-                return {
-                pane: 'pane_PopulationDensity2021_1',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(252,143,111,1.0)',
-                interactive: true,
-            }
-            }
-            if (feature.properties['PD_Y2021'] >= 48.382732 && feature.properties['PD_Y2021'] <= 68.782959 ) {
-                return {
-                pane: 'pane_PopulationDensity2021_1',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(244,77,55,1.0)',
-                interactive: true,
-            }
-            }
-            if (feature.properties['PD_Y2021'] >= 68.782959 && feature.properties['PD_Y2021'] <= 195.248472 ) {
-                return {
-                pane: 'pane_PopulationDensity2021_1',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(197,22,27,1.0)',
-                interactive: true,
-            }
-            }
-            if (feature.properties['PD_Y2021'] >= 195.248472 && feature.properties['PD_Y2021'] <= 1154.401143 ) {
-                return {
-                pane: 'pane_PopulationDensity2021_1',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(103,0,13,1.0)',
-                interactive: true,
-            }
             }
         }
-        map.createPane('pane_PopulationDensity2021_1');
-        map.getPane('pane_PopulationDensity2021_1').style.zIndex = 401;
-        map.getPane('pane_PopulationDensity2021_1').style['mix-blend-mode'] = 'normal';
-        var layer_PopulationDensity2021_1 = new L.geoJson(json_PopulationDensity2021_1, {
+        map.createPane('pane_Provinces_1');
+        map.getPane('pane_Provinces_1').style.zIndex = 401;
+        map.getPane('pane_Provinces_1').style['mix-blend-mode'] = 'normal';
+        var layer_Provinces_1 = new L.geoJson(json_Provinces_1, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_PopulationDensity2021_1',
-            layerName: 'layer_PopulationDensity2021_1',
-            pane: 'pane_PopulationDensity2021_1',
-            onEachFeature: pop_PopulationDensity2021_1,
-            style: style_PopulationDensity2021_1_0,
+            dataVar: 'json_Provinces_1',
+            layerName: 'layer_Provinces_1',
+            pane: 'pane_Provinces_1',
+            onEachFeature: pop_Provinces_1,
+            style: style_Provinces_1_0,
         });
-        bounds_group.addLayer(layer_PopulationDensity2021_1);
-        function pop_PopulationEstimate2021_2(feature, layer) {
-            layer.on({
-                mouseout: function(e) {
-                    for (i in e.target._eventParents) {
-                        e.target._eventParents[i].resetStyle(e.target);
-                    }
-                    if (typeof layer.closePopup == 'function') {
-                        layer.closePopup();
-                    } else {
-                        layer.eachLayer(function(feature){
-                            feature.closePopup()
-                        });
-                    }
-                },
-                mouseover: highlightFeature,
-            });
-            var popupContent = '<table>\
-                    <tr>\
-                        <th scope="row">ID</th>\
-                        <td>' + (feature.properties['ID'] !== null ? autolinker.link(feature.properties['ID'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">PROVINCE</th>\
-                        <td>' + (feature.properties['PROVINCE'] !== null ? autolinker.link(feature.properties['PROVINCE'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">CODE</th>\
-                        <td>' + (feature.properties['CODE'] !== null ? autolinker.link(feature.properties['CODE'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">TYPE</th>\
-                        <td>' + (feature.properties['TYPE'] !== null ? autolinker.link(feature.properties['TYPE'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">Shape_Leng</th>\
-                        <td>' + (feature.properties['Shape_Leng'] !== null ? autolinker.link(feature.properties['Shape_Leng'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">Shape_Area</th>\
-                        <td>' + (feature.properties['Shape_Area'] !== null ? autolinker.link(feature.properties['Shape_Area'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">Daily_Test</th>\
-                        <td>' + (feature.properties['Daily_Test'] !== null ? autolinker.link(feature.properties['Daily_Test'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">District</th>\
-                        <td>' + (feature.properties['District'] !== null ? autolinker.link(feature.properties['District'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">Population</th>\
-                        <td>' + (feature.properties['Population'] !== null ? autolinker.link(feature.properties['Population'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">Populati_1</th>\
-                        <td>' + (feature.properties['Populati_1'] !== null ? autolinker.link(feature.properties['Populati_1'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">Populati_2</th>\
-                        <td>' + (feature.properties['Populati_2'] !== null ? autolinker.link(feature.properties['Populati_2'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">Area</th>\
-                        <td>' + (feature.properties['Area'] !== null ? autolinker.link(feature.properties['Area'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">PD_Y2019</th>\
-                        <td>' + (feature.properties['PD_Y2019'] !== null ? autolinker.link(feature.properties['PD_Y2019'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">PD_Y2020</th>\
-                        <td>' + (feature.properties['PD_Y2020'] !== null ? autolinker.link(feature.properties['PD_Y2020'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">PD_Y2021</th>\
-                        <td>' + (feature.properties['PD_Y2021'] !== null ? autolinker.link(feature.properties['PD_Y2021'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">Pop_2021</th>\
-                        <td>' + (feature.properties['Pop_2021'] !== null ? autolinker.link(feature.properties['Pop_2021'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                </table>';
-            layer.bindPopup(popupContent, {maxHeight: 400});
-        }
-
-        function style_PopulationEstimate2021_2_0(feature) {
-            if (feature.properties['PD_Y2021'] >= 4.591860 && feature.properties['PD_Y2021'] <= 4.591860 ) {
-                return {
-                pane: 'pane_PopulationEstimate2021_2',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(255,245,240,1.0)',
-                interactive: true,
-            }
-            }
-            if (feature.properties['PD_Y2021'] >= 4.591860 && feature.properties['PD_Y2021'] <= 4.591860 ) {
-                return {
-                pane: 'pane_PopulationEstimate2021_2',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(253,204,184,1.0)',
-                interactive: true,
-            }
-            }
-            if (feature.properties['PD_Y2021'] >= 4.591860 && feature.properties['PD_Y2021'] <= 48.382732 ) {
-                return {
-                pane: 'pane_PopulationEstimate2021_2',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(252,143,111,1.0)',
-                interactive: true,
-            }
-            }
-            if (feature.properties['PD_Y2021'] >= 48.382732 && feature.properties['PD_Y2021'] <= 68.782959 ) {
-                return {
-                pane: 'pane_PopulationEstimate2021_2',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(244,77,55,1.0)',
-                interactive: true,
-            }
-            }
-            if (feature.properties['PD_Y2021'] >= 68.782959 && feature.properties['PD_Y2021'] <= 195.248472 ) {
-                return {
-                pane: 'pane_PopulationEstimate2021_2',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(197,22,27,1.0)',
-                interactive: true,
-            }
-            }
-            if (feature.properties['PD_Y2021'] >= 195.248472 && feature.properties['PD_Y2021'] <= 1154.401143 ) {
-                return {
-                pane: 'pane_PopulationEstimate2021_2',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(103,0,13,1.0)',
-                interactive: true,
-            }
-            }
-        }
-        map.createPane('pane_PopulationEstimate2021_2');
-        map.getPane('pane_PopulationEstimate2021_2').style.zIndex = 402;
-        map.getPane('pane_PopulationEstimate2021_2').style['mix-blend-mode'] = 'normal';
-        var layer_PopulationEstimate2021_2 = new L.geoJson(json_PopulationEstimate2021_2, {
-            attribution: '',
-            interactive: true,
-            dataVar: 'json_PopulationEstimate2021_2',
-            layerName: 'layer_PopulationEstimate2021_2',
-            pane: 'pane_PopulationEstimate2021_2',
-            onEachFeature: pop_PopulationEstimate2021_2,
-            style: style_PopulationEstimate2021_2_0,
-        });
-        bounds_group.addLayer(layer_PopulationEstimate2021_2);
-        function pop_PopulationDensity2018_3(feature, layer) {
+        bounds_group.addLayer(layer_Provinces_1);
+        function pop_PopulationDensity2018_2(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (i in e.target._eventParents) {
@@ -560,10 +253,10 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_PopulationDensity2018_3_0(feature) {
+        function style_PopulationDensity2018_2_0(feature) {
             if (feature.properties['PD_2018'] >= 0.910512 && feature.properties['PD_2018'] <= 41.709669 ) {
                 return {
-                pane: 'pane_PopulationDensity2018_3',
+                pane: 'pane_PopulationDensity2018_2',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -578,7 +271,7 @@
             }
             if (feature.properties['PD_2018'] >= 41.709669 && feature.properties['PD_2018'] <= 120.035978 ) {
                 return {
-                pane: 'pane_PopulationDensity2018_3',
+                pane: 'pane_PopulationDensity2018_2',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -593,7 +286,7 @@
             }
             if (feature.properties['PD_2018'] >= 120.035978 && feature.properties['PD_2018'] <= 303.604199 ) {
                 return {
-                pane: 'pane_PopulationDensity2018_3',
+                pane: 'pane_PopulationDensity2018_2',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -608,7 +301,7 @@
             }
             if (feature.properties['PD_2018'] >= 303.604199 && feature.properties['PD_2018'] <= 645.415330 ) {
                 return {
-                pane: 'pane_PopulationDensity2018_3',
+                pane: 'pane_PopulationDensity2018_2',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -623,7 +316,7 @@
             }
             if (feature.properties['PD_2018'] >= 645.415330 && feature.properties['PD_2018'] <= 1710.628732 ) {
                 return {
-                pane: 'pane_PopulationDensity2018_3',
+                pane: 'pane_PopulationDensity2018_2',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -638,7 +331,7 @@
             }
             if (feature.properties['PD_2018'] >= 1710.628732 && feature.properties['PD_2018'] <= 3008.847515 ) {
                 return {
-                pane: 'pane_PopulationDensity2018_3',
+                pane: 'pane_PopulationDensity2018_2',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -652,20 +345,20 @@
             }
             }
         }
-        map.createPane('pane_PopulationDensity2018_3');
-        map.getPane('pane_PopulationDensity2018_3').style.zIndex = 403;
-        map.getPane('pane_PopulationDensity2018_3').style['mix-blend-mode'] = 'normal';
-        var layer_PopulationDensity2018_3 = new L.geoJson(json_PopulationDensity2018_3, {
+        map.createPane('pane_PopulationDensity2018_2');
+        map.getPane('pane_PopulationDensity2018_2').style.zIndex = 402;
+        map.getPane('pane_PopulationDensity2018_2').style['mix-blend-mode'] = 'normal';
+        var layer_PopulationDensity2018_2 = new L.geoJson(json_PopulationDensity2018_2, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_PopulationDensity2018_3',
-            layerName: 'layer_PopulationDensity2018_3',
-            pane: 'pane_PopulationDensity2018_3',
-            onEachFeature: pop_PopulationDensity2018_3,
-            style: style_PopulationDensity2018_3_0,
+            dataVar: 'json_PopulationDensity2018_2',
+            layerName: 'layer_PopulationDensity2018_2',
+            pane: 'pane_PopulationDensity2018_2',
+            onEachFeature: pop_PopulationDensity2018_2,
+            style: style_PopulationDensity2018_2_0,
         });
-        bounds_group.addLayer(layer_PopulationDensity2018_3);
-        function pop_Population2018_4(feature, layer) {
+        bounds_group.addLayer(layer_PopulationDensity2018_2);
+        function pop_Population2018_3(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (i in e.target._eventParents) {
@@ -682,6 +375,10 @@
                 mouseover: highlightFeature,
             });
             var popupContent = '<table>\
+                    <tr>\
+                        <th scope="row">OBJECTID</th>\
+                        <td>' + (feature.properties['OBJECTID'] !== null ? autolinker.link(feature.properties['OBJECTID'].toLocaleString()) : '') + '</td>\
+                    </tr>\
                     <tr>\
                         <th scope="row">ProvinceCo</th>\
                         <td>' + (feature.properties['ProvinceCo'] !== null ? autolinker.link(feature.properties['ProvinceCo'].toLocaleString()) : '') + '</td>\
@@ -702,14 +399,50 @@
                         <th scope="row">ProvinceNa</th>\
                         <td>' + (feature.properties['ProvinceNa'] !== null ? autolinker.link(feature.properties['ProvinceNa'].toLocaleString()) : '') + '</td>\
                     </tr>\
+                    <tr>\
+                        <th scope="row">Year</th>\
+                        <td>' + (feature.properties['Year'] !== null ? autolinker.link(feature.properties['Year'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Shape__Are</th>\
+                        <td>' + (feature.properties['Shape__Are'] !== null ? autolinker.link(feature.properties['Shape__Are'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Shape__Len</th>\
+                        <td>' + (feature.properties['Shape__Len'] !== null ? autolinker.link(feature.properties['Shape__Len'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Shape_Leng</th>\
+                        <td>' + (feature.properties['Shape_Leng'] !== null ? autolinker.link(feature.properties['Shape_Leng'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Shape_Area</th>\
+                        <td>' + (feature.properties['Shape_Area'] !== null ? autolinker.link(feature.properties['Shape_Area'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Row_Labels</th>\
+                        <td>' + (feature.properties['Row_Labels'] !== null ? autolinker.link(feature.properties['Row_Labels'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Y2018_Pop</th>\
+                        <td>' + (feature.properties['Y2018_Pop'] !== null ? autolinker.link(feature.properties['Y2018_Pop'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Area</th>\
+                        <td>' + (feature.properties['Area'] !== null ? autolinker.link(feature.properties['Area'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">PD_2018</th>\
+                        <td>' + (feature.properties['PD_2018'] !== null ? autolinker.link(feature.properties['PD_2018'].toLocaleString()) : '') + '</td>\
+                    </tr>\
                 </table>';
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_Population2018_4_0(feature) {
+        function style_Population2018_3_0(feature) {
             if (feature.properties['Y2018_Pop'] >= 74247.000000 && feature.properties['Y2018_Pop'] <= 286785.000000 ) {
                 return {
-                pane: 'pane_Population2018_4',
+                pane: 'pane_Population2018_3',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -724,7 +457,7 @@
             }
             if (feature.properties['Y2018_Pop'] >= 286785.000000 && feature.properties['Y2018_Pop'] <= 657613.000000 ) {
                 return {
-                pane: 'pane_Population2018_4',
+                pane: 'pane_Population2018_3',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -739,7 +472,7 @@
             }
             if (feature.properties['Y2018_Pop'] >= 657613.000000 && feature.properties['Y2018_Pop'] <= 971135.000000 ) {
                 return {
-                pane: 'pane_Population2018_4',
+                pane: 'pane_Population2018_3',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -754,7 +487,7 @@
             }
             if (feature.properties['Y2018_Pop'] >= 971135.000000 && feature.properties['Y2018_Pop'] <= 1754930.000000 ) {
                 return {
-                pane: 'pane_Population2018_4',
+                pane: 'pane_Population2018_3',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -769,7 +502,7 @@
             }
             if (feature.properties['Y2018_Pop'] >= 1754930.000000 && feature.properties['Y2018_Pop'] <= 4005016.000000 ) {
                 return {
-                pane: 'pane_Population2018_4',
+                pane: 'pane_Population2018_3',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -784,7 +517,7 @@
             }
             if (feature.properties['Y2018_Pop'] >= 4005016.000000 && feature.properties['Y2018_Pop'] <= 4949347.000000 ) {
                 return {
-                pane: 'pane_Population2018_4',
+                pane: 'pane_Population2018_3',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -798,20 +531,20 @@
             }
             }
         }
-        map.createPane('pane_Population2018_4');
-        map.getPane('pane_Population2018_4').style.zIndex = 404;
-        map.getPane('pane_Population2018_4').style['mix-blend-mode'] = 'normal';
-        var layer_Population2018_4 = new L.geoJson(json_Population2018_4, {
+        map.createPane('pane_Population2018_3');
+        map.getPane('pane_Population2018_3').style.zIndex = 403;
+        map.getPane('pane_Population2018_3').style['mix-blend-mode'] = 'normal';
+        var layer_Population2018_3 = new L.geoJson(json_Population2018_3, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_Population2018_4',
-            layerName: 'layer_Population2018_4',
-            pane: 'pane_Population2018_4',
-            onEachFeature: pop_Population2018_4,
-            style: style_Population2018_4_0,
+            dataVar: 'json_Population2018_3',
+            layerName: 'layer_Population2018_3',
+            pane: 'pane_Population2018_3',
+            onEachFeature: pop_Population2018_3,
+            style: style_Population2018_3_0,
         });
-        bounds_group.addLayer(layer_Population2018_4);
-        function pop_KZNCovid19August2021_5(feature, layer) {
+        bounds_group.addLayer(layer_Population2018_3);
+        function pop_PopulationDensity2020_4(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (i in e.target._eventParents) {
@@ -829,247 +562,65 @@
             });
             var popupContent = '<table>\
                     <tr>\
-                        <th scope="row">ProvinceCo</th>\
-                        <td>' + (feature.properties['ProvinceCo'] !== null ? autolinker.link(feature.properties['ProvinceCo'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">DistrictMu</th>\
-                        <td>' + (feature.properties['DistrictMu'] !== null ? autolinker.link(feature.properties['DistrictMu'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">District_1</th>\
-                        <td>' + (feature.properties['District_1'] !== null ? autolinker.link(feature.properties['District_1'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">CodeDescri</th>\
-                        <td>' + (feature.properties['CodeDescri'] !== null ? autolinker.link(feature.properties['CodeDescri'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['ProvinceNa'] !== null ? autolinker.link(feature.properties['ProvinceNa'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['PROVINCE'] !== null ? autolinker.link(feature.properties['PROVINCE'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['CAT2'] !== null ? autolinker.link(feature.properties['CAT2'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['CAT_B'] !== null ? autolinker.link(feature.properties['CAT_B'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['MUNICNAME'] !== null ? autolinker.link(feature.properties['MUNICNAME'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['NAMECODE'] !== null ? autolinker.link(feature.properties['NAMECODE'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['DISTRICT'] !== null ? autolinker.link(feature.properties['DISTRICT'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['DISTRICT_N'] !== null ? autolinker.link(feature.properties['DISTRICT_N'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['Dember_202'] !== null ? autolinker.link(feature.properties['Dember_202'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['July_2021'] !== null ? autolinker.link(feature.properties['July_2021'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['Jan_2021'] !== null ? autolinker.link(feature.properties['Jan_2021'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['August_202'] !== null ? autolinker.link(feature.properties['August_202'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['July_2020'] !== null ? autolinker.link(feature.properties['July_2020'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                </table>';
-            layer.bindPopup(popupContent, {maxHeight: 400});
-        }
-
-        function style_KZNCovid19August2021_5_0(feature) {
-            if (feature.properties['August_202'] >= 2190.000000 && feature.properties['August_202'] <= 2190.000000 ) {
-                return {
-                pane: 'pane_KZNCovid19August2021_5',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(43,131,186,1.0)',
-                interactive: false,
-            }
-            }
-            if (feature.properties['August_202'] >= 2190.000000 && feature.properties['August_202'] <= 3070.000000 ) {
-                return {
-                pane: 'pane_KZNCovid19August2021_5',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(171,221,164,1.0)',
-                interactive: false,
-            }
-            }
-            if (feature.properties['August_202'] >= 3070.000000 && feature.properties['August_202'] <= 5091.000000 ) {
-                return {
-                pane: 'pane_KZNCovid19August2021_5',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(255,255,191,1.0)',
-                interactive: false,
-            }
-            }
-            if (feature.properties['August_202'] >= 5091.000000 && feature.properties['August_202'] <= 13457.000000 ) {
-                return {
-                pane: 'pane_KZNCovid19August2021_5',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(253,174,97,1.0)',
-                interactive: false,
-            }
-            }
-            if (feature.properties['August_202'] >= 13457.000000 && feature.properties['August_202'] <= 38669.000000 ) {
-                return {
-                pane: 'pane_KZNCovid19August2021_5',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(215,25,28,1.0)',
-                interactive: false,
-            }
-            }
-        }
-        map.createPane('pane_KZNCovid19August2021_5');
-        map.getPane('pane_KZNCovid19August2021_5').style.zIndex = 405;
-        map.getPane('pane_KZNCovid19August2021_5').style['mix-blend-mode'] = 'normal';
-        var layer_KZNCovid19August2021_5 = new L.geoJson(json_KZNCovid19August2021_5, {
-            attribution: '',
-            interactive: false,
-            dataVar: 'json_KZNCovid19August2021_5',
-            layerName: 'layer_KZNCovid19August2021_5',
-            pane: 'pane_KZNCovid19August2021_5',
-            onEachFeature: pop_KZNCovid19August2021_5,
-            style: style_KZNCovid19August2021_5_0,
-        });
-        bounds_group.addLayer(layer_KZNCovid19August2021_5);
-        function pop_KZNCovid19July2021_6(feature, layer) {
-            layer.on({
-                mouseout: function(e) {
-                    for (i in e.target._eventParents) {
-                        e.target._eventParents[i].resetStyle(e.target);
-                    }
-                    if (typeof layer.closePopup == 'function') {
-                        layer.closePopup();
-                    } else {
-                        layer.eachLayer(function(feature){
-                            feature.closePopup()
-                        });
-                    }
-                },
-                mouseover: highlightFeature,
-            });
-            var popupContent = '<table>\
-                    <tr>\
-                        <th scope="row">ProvinceCo</th>\
-                        <td>' + (feature.properties['ProvinceCo'] !== null ? autolinker.link(feature.properties['ProvinceCo'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">DistrictMu</th>\
-                        <td>' + (feature.properties['DistrictMu'] !== null ? autolinker.link(feature.properties['DistrictMu'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">District_1</th>\
-                        <td>' + (feature.properties['District_1'] !== null ? autolinker.link(feature.properties['District_1'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">CodeDescri</th>\
-                        <td>' + (feature.properties['CodeDescri'] !== null ? autolinker.link(feature.properties['CodeDescri'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">ProvinceNa</th>\
-                        <td>' + (feature.properties['ProvinceNa'] !== null ? autolinker.link(feature.properties['ProvinceNa'].toLocaleString()) : '') + '</td>\
+                        <th scope="row">ID</th>\
+                        <td>' + (feature.properties['ID'] !== null ? autolinker.link(feature.properties['ID'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">PROVINCE</th>\
                         <td>' + (feature.properties['PROVINCE'] !== null ? autolinker.link(feature.properties['PROVINCE'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">CAT2</th>\
-                        <td>' + (feature.properties['CAT2'] !== null ? autolinker.link(feature.properties['CAT2'].toLocaleString()) : '') + '</td>\
+                        <th scope="row">CODE</th>\
+                        <td>' + (feature.properties['CODE'] !== null ? autolinker.link(feature.properties['CODE'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">CAT_B</th>\
-                        <td>' + (feature.properties['CAT_B'] !== null ? autolinker.link(feature.properties['CAT_B'].toLocaleString()) : '') + '</td>\
+                        <th scope="row">Shape_Leng</th>\
+                        <td>' + (feature.properties['Shape_Leng'] !== null ? autolinker.link(feature.properties['Shape_Leng'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">MUNICNAME</th>\
-                        <td>' + (feature.properties['MUNICNAME'] !== null ? autolinker.link(feature.properties['MUNICNAME'].toLocaleString()) : '') + '</td>\
+                        <th scope="row">Shape_Area</th>\
+                        <td>' + (feature.properties['Shape_Area'] !== null ? autolinker.link(feature.properties['Shape_Area'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">NAMECODE</th>\
-                        <td>' + (feature.properties['NAMECODE'] !== null ? autolinker.link(feature.properties['NAMECODE'].toLocaleString()) : '') + '</td>\
+                        <th scope="row">District</th>\
+                        <td>' + (feature.properties['District'] !== null ? autolinker.link(feature.properties['District'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">DISTRICT</th>\
-                        <td>' + (feature.properties['DISTRICT'] !== null ? autolinker.link(feature.properties['DISTRICT'].toLocaleString()) : '') + '</td>\
+                        <th scope="row">Area</th>\
+                        <td>' + (feature.properties['Area'] !== null ? autolinker.link(feature.properties['Area'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">DISTRICT_N</th>\
-                        <td>' + (feature.properties['DISTRICT_N'] !== null ? autolinker.link(feature.properties['DISTRICT_N'].toLocaleString()) : '') + '</td>\
+                        <th scope="row">Pop_2021</th>\
+                        <td>' + (feature.properties['Pop_2021'] !== null ? autolinker.link(feature.properties['Pop_2021'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Dember_202</th>\
-                        <td>' + (feature.properties['Dember_202'] !== null ? autolinker.link(feature.properties['Dember_202'].toLocaleString()) : '') + '</td>\
+                        <th scope="row">Popu_2019</th>\
+                        <td>' + (feature.properties['Popu_2019'] !== null ? autolinker.link(feature.properties['Popu_2019'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">July_2021</th>\
-                        <td>' + (feature.properties['July_2021'] !== null ? autolinker.link(feature.properties['July_2021'].toLocaleString()) : '') + '</td>\
+                        <th scope="row">Popu_2020</th>\
+                        <td>' + (feature.properties['Popu_2020'] !== null ? autolinker.link(feature.properties['Popu_2020'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Jan_2021</th>\
-                        <td>' + (feature.properties['Jan_2021'] !== null ? autolinker.link(feature.properties['Jan_2021'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['Popu_2021'] !== null ? autolinker.link(feature.properties['Popu_2021'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">August_202</th>\
-                        <td>' + (feature.properties['August_202'] !== null ? autolinker.link(feature.properties['August_202'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['PD_2019'] !== null ? autolinker.link(feature.properties['PD_2019'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">July_2020</th>\
-                        <td>' + (feature.properties['July_2020'] !== null ? autolinker.link(feature.properties['July_2020'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['PD_2020'] !== null ? autolinker.link(feature.properties['PD_2020'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['PD_2021'] !== null ? autolinker.link(feature.properties['PD_2021'].toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_KZNCovid19July2021_6_0(feature) {
-            if (feature.properties['July_2021'] >= 317.000000 && feature.properties['July_2021'] <= 317.000000 ) {
+        function style_PopulationDensity2020_4_0(feature) {
+            if (feature.properties['PD_2020'] >= 5.000000 && feature.properties['PD_2020'] <= 5.000000 ) {
                 return {
-                pane: 'pane_KZNCovid19July2021_6',
+                pane: 'pane_PopulationDensity2020_4',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -1078,192 +629,13 @@
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(43,131,186,1.0)',
-                interactive: false,
-            }
-            }
-            if (feature.properties['July_2021'] >= 317.000000 && feature.properties['July_2021'] <= 1240.000000 ) {
-                return {
-                pane: 'pane_KZNCovid19July2021_6',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(171,221,164,1.0)',
-                interactive: false,
-            }
-            }
-            if (feature.properties['July_2021'] >= 1240.000000 && feature.properties['July_2021'] <= 2108.000000 ) {
-                return {
-                pane: 'pane_KZNCovid19July2021_6',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(255,255,191,1.0)',
-                interactive: false,
-            }
-            }
-            if (feature.properties['July_2021'] >= 2108.000000 && feature.properties['July_2021'] <= 5777.000000 ) {
-                return {
-                pane: 'pane_KZNCovid19July2021_6',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(253,174,97,1.0)',
-                interactive: false,
-            }
-            }
-            if (feature.properties['July_2021'] >= 5777.000000 && feature.properties['July_2021'] <= 12050.000000 ) {
-                return {
-                pane: 'pane_KZNCovid19July2021_6',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(215,25,28,1.0)',
-                interactive: false,
-            }
-            }
-        }
-        map.createPane('pane_KZNCovid19July2021_6');
-        map.getPane('pane_KZNCovid19July2021_6').style.zIndex = 406;
-        map.getPane('pane_KZNCovid19July2021_6').style['mix-blend-mode'] = 'normal';
-        var layer_KZNCovid19July2021_6 = new L.geoJson(json_KZNCovid19July2021_6, {
-            attribution: '',
-            interactive: false,
-            dataVar: 'json_KZNCovid19July2021_6',
-            layerName: 'layer_KZNCovid19July2021_6',
-            pane: 'pane_KZNCovid19July2021_6',
-            onEachFeature: pop_KZNCovid19July2021_6,
-            style: style_KZNCovid19July2021_6_0,
-        });
-        bounds_group.addLayer(layer_KZNCovid19July2021_6);
-        function pop_KZNCovid19January2021_7(feature, layer) {
-            layer.on({
-                mouseout: function(e) {
-                    for (i in e.target._eventParents) {
-                        e.target._eventParents[i].resetStyle(e.target);
-                    }
-                    if (typeof layer.closePopup == 'function') {
-                        layer.closePopup();
-                    } else {
-                        layer.eachLayer(function(feature){
-                            feature.closePopup()
-                        });
-                    }
-                },
-                mouseover: highlightFeature,
-            });
-            var popupContent = '<table>\
-                    <tr>\
-                        <th scope="row">ProvinceCo</th>\
-                        <td>' + (feature.properties['ProvinceCo'] !== null ? autolinker.link(feature.properties['ProvinceCo'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">DistrictMu</th>\
-                        <td>' + (feature.properties['DistrictMu'] !== null ? autolinker.link(feature.properties['DistrictMu'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">District_1</th>\
-                        <td>' + (feature.properties['District_1'] !== null ? autolinker.link(feature.properties['District_1'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">CodeDescri</th>\
-                        <td>' + (feature.properties['CodeDescri'] !== null ? autolinker.link(feature.properties['CodeDescri'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">ProvinceNa</th>\
-                        <td>' + (feature.properties['ProvinceNa'] !== null ? autolinker.link(feature.properties['ProvinceNa'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">PROVINCE</th>\
-                        <td>' + (feature.properties['PROVINCE'] !== null ? autolinker.link(feature.properties['PROVINCE'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">CAT2</th>\
-                        <td>' + (feature.properties['CAT2'] !== null ? autolinker.link(feature.properties['CAT2'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">CAT_B</th>\
-                        <td>' + (feature.properties['CAT_B'] !== null ? autolinker.link(feature.properties['CAT_B'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">MUNICNAME</th>\
-                        <td>' + (feature.properties['MUNICNAME'] !== null ? autolinker.link(feature.properties['MUNICNAME'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">NAMECODE</th>\
-                        <td>' + (feature.properties['NAMECODE'] !== null ? autolinker.link(feature.properties['NAMECODE'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">DISTRICT</th>\
-                        <td>' + (feature.properties['DISTRICT'] !== null ? autolinker.link(feature.properties['DISTRICT'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">DISTRICT_N</th>\
-                        <td>' + (feature.properties['DISTRICT_N'] !== null ? autolinker.link(feature.properties['DISTRICT_N'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">Dember_202</th>\
-                        <td>' + (feature.properties['Dember_202'] !== null ? autolinker.link(feature.properties['Dember_202'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">July_2021</th>\
-                        <td>' + (feature.properties['July_2021'] !== null ? autolinker.link(feature.properties['July_2021'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">Jan_2021</th>\
-                        <td>' + (feature.properties['Jan_2021'] !== null ? autolinker.link(feature.properties['Jan_2021'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">August_202</th>\
-                        <td>' + (feature.properties['August_202'] !== null ? autolinker.link(feature.properties['August_202'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">July_2020</th>\
-                        <td>' + (feature.properties['July_2020'] !== null ? autolinker.link(feature.properties['July_2020'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                </table>';
-            layer.bindPopup(popupContent, {maxHeight: 400});
-        }
-
-        function style_KZNCovid19January2021_7_0(feature) {
-            if (feature.properties['Jan_2021'] >= 3230.000000 && feature.properties['Jan_2021'] <= 3378.000000 ) {
-                return {
-                pane: 'pane_KZNCovid19January2021_7',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(43,131,186,1.0)',
+                fillColor: 'rgba(255,245,240,1.0)',
                 interactive: true,
             }
             }
-            if (feature.properties['Jan_2021'] >= 3378.000000 && feature.properties['Jan_2021'] <= 6075.000000 ) {
+            if (feature.properties['PD_2020'] >= 5.000000 && feature.properties['PD_2020'] <= 5.000000 ) {
                 return {
-                pane: 'pane_KZNCovid19January2021_7',
+                pane: 'pane_PopulationDensity2020_4',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -1272,13 +644,13 @@
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(171,221,164,1.0)',
+                fillColor: 'rgba(253,204,184,1.0)',
                 interactive: true,
             }
             }
-            if (feature.properties['Jan_2021'] >= 6075.000000 && feature.properties['Jan_2021'] <= 8356.000000 ) {
+            if (feature.properties['PD_2020'] >= 5.000000 && feature.properties['PD_2020'] <= 48.000000 ) {
                 return {
-                pane: 'pane_KZNCovid19January2021_7',
+                pane: 'pane_PopulationDensity2020_4',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -1287,13 +659,13 @@
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(255,255,191,1.0)',
+                fillColor: 'rgba(252,143,111,1.0)',
                 interactive: true,
             }
             }
-            if (feature.properties['Jan_2021'] >= 8356.000000 && feature.properties['Jan_2021'] <= 12856.000000 ) {
+            if (feature.properties['PD_2020'] >= 48.000000 && feature.properties['PD_2020'] <= 68.000000 ) {
                 return {
-                pane: 'pane_KZNCovid19January2021_7',
+                pane: 'pane_PopulationDensity2020_4',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -1302,13 +674,13 @@
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(253,174,97,1.0)',
+                fillColor: 'rgba(244,77,55,1.0)',
                 interactive: true,
             }
             }
-            if (feature.properties['Jan_2021'] >= 12856.000000 && feature.properties['Jan_2021'] <= 51204.000000 ) {
+            if (feature.properties['PD_2020'] >= 68.000000 && feature.properties['PD_2020'] <= 193.000000 ) {
                 return {
-                pane: 'pane_KZNCovid19January2021_7',
+                pane: 'pane_PopulationDensity2020_4',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -1317,25 +689,40 @@
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(215,25,28,1.0)',
+                fillColor: 'rgba(197,22,27,1.0)',
+                interactive: true,
+            }
+            }
+            if (feature.properties['PD_2020'] >= 193.000000 && feature.properties['PD_2020'] <= 1137.000000 ) {
+                return {
+                pane: 'pane_PopulationDensity2020_4',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(103,0,13,1.0)',
                 interactive: true,
             }
             }
         }
-        map.createPane('pane_KZNCovid19January2021_7');
-        map.getPane('pane_KZNCovid19January2021_7').style.zIndex = 407;
-        map.getPane('pane_KZNCovid19January2021_7').style['mix-blend-mode'] = 'normal';
-        var layer_KZNCovid19January2021_7 = new L.geoJson(json_KZNCovid19January2021_7, {
+        map.createPane('pane_PopulationDensity2020_4');
+        map.getPane('pane_PopulationDensity2020_4').style.zIndex = 404;
+        map.getPane('pane_PopulationDensity2020_4').style['mix-blend-mode'] = 'normal';
+        var layer_PopulationDensity2020_4 = new L.geoJson(json_PopulationDensity2020_4, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_KZNCovid19January2021_7',
-            layerName: 'layer_KZNCovid19January2021_7',
-            pane: 'pane_KZNCovid19January2021_7',
-            onEachFeature: pop_KZNCovid19January2021_7,
-            style: style_KZNCovid19January2021_7_0,
+            dataVar: 'json_PopulationDensity2020_4',
+            layerName: 'layer_PopulationDensity2020_4',
+            pane: 'pane_PopulationDensity2020_4',
+            onEachFeature: pop_PopulationDensity2020_4,
+            style: style_PopulationDensity2020_4_0,
         });
-        bounds_group.addLayer(layer_KZNCovid19January2021_7);
-        function pop_KZNCovid19July2020_8(feature, layer) {
+        bounds_group.addLayer(layer_PopulationDensity2020_4);
+        function pop_PopulationEstimate2020_5(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (i in e.target._eventParents) {
@@ -1353,9 +740,990 @@
             });
             var popupContent = '<table>\
                     <tr>\
-                        <th scope="row">ProvinceCo</th>\
-                        <td>' + (feature.properties['ProvinceCo'] !== null ? autolinker.link(feature.properties['ProvinceCo'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>ID</strong><br />' + (feature.properties['ID'] !== null ? autolinker.link(feature.properties['ID'].toLocaleString()) : '') + '</td>\
                     </tr>\
+                    <tr>\
+                        <th scope="row">PROVINCE</th>\
+                        <td>' + (feature.properties['PROVINCE'] !== null ? autolinker.link(feature.properties['PROVINCE'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2"><strong>CODE</strong><br />' + (feature.properties['CODE'] !== null ? autolinker.link(feature.properties['CODE'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2"><strong>Shape_Leng</strong><br />' + (feature.properties['Shape_Leng'] !== null ? autolinker.link(feature.properties['Shape_Leng'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Shape_Area</th>\
+                        <td>' + (feature.properties['Shape_Area'] !== null ? autolinker.link(feature.properties['Shape_Area'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">District</th>\
+                        <td>' + (feature.properties['District'] !== null ? autolinker.link(feature.properties['District'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Area</th>\
+                        <td>' + (feature.properties['Area'] !== null ? autolinker.link(feature.properties['Area'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Pop_2021</th>\
+                        <td>' + (feature.properties['Pop_2021'] !== null ? autolinker.link(feature.properties['Pop_2021'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Popu_2019</th>\
+                        <td>' + (feature.properties['Popu_2019'] !== null ? autolinker.link(feature.properties['Popu_2019'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Popu_2020</th>\
+                        <td>' + (feature.properties['Popu_2020'] !== null ? autolinker.link(feature.properties['Popu_2020'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Popu_2021</th>\
+                        <td>' + (feature.properties['Popu_2021'] !== null ? autolinker.link(feature.properties['Popu_2021'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">PD_2019</th>\
+                        <td>' + (feature.properties['PD_2019'] !== null ? autolinker.link(feature.properties['PD_2019'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">PD_2020</th>\
+                        <td>' + (feature.properties['PD_2020'] !== null ? autolinker.link(feature.properties['PD_2020'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">PD_2021</th>\
+                        <td>' + (feature.properties['PD_2021'] !== null ? autolinker.link(feature.properties['PD_2021'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_PopulationEstimate2020_5_0(feature) {
+            if (feature.properties['Popu_2020'] >= 1659121.000000 && feature.properties['Popu_2020'] <= 1659121.000000 ) {
+                return {
+                pane: 'pane_PopulationEstimate2020_5',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,245,240,1.0)',
+                interactive: true,
+            }
+            }
+            if (feature.properties['Popu_2020'] >= 1659121.000000 && feature.properties['Popu_2020'] <= 1659121.000000 ) {
+                return {
+                pane: 'pane_PopulationEstimate2020_5',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(253,204,184,1.0)',
+                interactive: true,
+            }
+            }
+            if (feature.properties['Popu_2020'] >= 1659121.000000 && feature.properties['Popu_2020'] <= 5554853.000000 ) {
+                return {
+                pane: 'pane_PopulationEstimate2020_5',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(252,143,111,1.0)',
+                interactive: true,
+            }
+            }
+            if (feature.properties['Popu_2020'] >= 5554853.000000 && feature.properties['Popu_2020'] <= 8798649.000000 ) {
+                return {
+                pane: 'pane_PopulationEstimate2020_5',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(244,77,55,1.0)',
+                interactive: true,
+            }
+            }
+            if (feature.properties['Popu_2020'] >= 8798649.000000 && feature.properties['Popu_2020'] <= 10640344.000000 ) {
+                return {
+                pane: 'pane_PopulationEstimate2020_5',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(197,22,27,1.0)',
+                interactive: true,
+            }
+            }
+            if (feature.properties['Popu_2020'] >= 10640344.000000 && feature.properties['Popu_2020'] <= 19262479.000000 ) {
+                return {
+                pane: 'pane_PopulationEstimate2020_5',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(103,0,13,1.0)',
+                interactive: true,
+            }
+            }
+        }
+        map.createPane('pane_PopulationEstimate2020_5');
+        map.getPane('pane_PopulationEstimate2020_5').style.zIndex = 405;
+        map.getPane('pane_PopulationEstimate2020_5').style['mix-blend-mode'] = 'normal';
+        var layer_PopulationEstimate2020_5 = new L.geoJson(json_PopulationEstimate2020_5, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_PopulationEstimate2020_5',
+            layerName: 'layer_PopulationEstimate2020_5',
+            pane: 'pane_PopulationEstimate2020_5',
+            onEachFeature: pop_PopulationEstimate2020_5,
+            style: style_PopulationEstimate2020_5_0,
+        });
+        bounds_group.addLayer(layer_PopulationEstimate2020_5);
+        function pop_PopulationDensity2021_6(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <th scope="row">ID</th>\
+                        <td>' + (feature.properties['ID'] !== null ? autolinker.link(feature.properties['ID'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">PROVINCE</th>\
+                        <td>' + (feature.properties['PROVINCE'] !== null ? autolinker.link(feature.properties['PROVINCE'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">CODE</th>\
+                        <td>' + (feature.properties['CODE'] !== null ? autolinker.link(feature.properties['CODE'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Shape_Leng</th>\
+                        <td>' + (feature.properties['Shape_Leng'] !== null ? autolinker.link(feature.properties['Shape_Leng'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Shape_Area</th>\
+                        <td>' + (feature.properties['Shape_Area'] !== null ? autolinker.link(feature.properties['Shape_Area'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">District</th>\
+                        <td>' + (feature.properties['District'] !== null ? autolinker.link(feature.properties['District'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Area</th>\
+                        <td>' + (feature.properties['Area'] !== null ? autolinker.link(feature.properties['Area'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Pop_2021</th>\
+                        <td>' + (feature.properties['Pop_2021'] !== null ? autolinker.link(feature.properties['Pop_2021'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Popu_2019</th>\
+                        <td>' + (feature.properties['Popu_2019'] !== null ? autolinker.link(feature.properties['Popu_2019'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Popu_2020</th>\
+                        <td>' + (feature.properties['Popu_2020'] !== null ? autolinker.link(feature.properties['Popu_2020'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Popu_2021</th>\
+                        <td>' + (feature.properties['Popu_2021'] !== null ? autolinker.link(feature.properties['Popu_2021'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">PD_2019</th>\
+                        <td>' + (feature.properties['PD_2019'] !== null ? autolinker.link(feature.properties['PD_2019'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">PD_2020</th>\
+                        <td>' + (feature.properties['PD_2020'] !== null ? autolinker.link(feature.properties['PD_2020'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">PD_2021</th>\
+                        <td>' + (feature.properties['PD_2021'] !== null ? autolinker.link(feature.properties['PD_2021'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_PopulationDensity2021_6_0(feature) {
+            if (feature.properties['PD_2021'] >= 5.000000 && feature.properties['PD_2021'] <= 5.000000 ) {
+                return {
+                pane: 'pane_PopulationDensity2021_6',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,245,240,1.0)',
+                interactive: true,
+            }
+            }
+            if (feature.properties['PD_2021'] >= 5.000000 && feature.properties['PD_2021'] <= 5.000000 ) {
+                return {
+                pane: 'pane_PopulationDensity2021_6',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(253,204,184,1.0)',
+                interactive: true,
+            }
+            }
+            if (feature.properties['PD_2021'] >= 5.000000 && feature.properties['PD_2021'] <= 48.000000 ) {
+                return {
+                pane: 'pane_PopulationDensity2021_6',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(252,143,111,1.0)',
+                interactive: true,
+            }
+            }
+            if (feature.properties['PD_2021'] >= 48.000000 && feature.properties['PD_2021'] <= 69.000000 ) {
+                return {
+                pane: 'pane_PopulationDensity2021_6',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(244,77,55,1.0)',
+                interactive: true,
+            }
+            }
+            if (feature.properties['PD_2021'] >= 69.000000 && feature.properties['PD_2021'] <= 195.000000 ) {
+                return {
+                pane: 'pane_PopulationDensity2021_6',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(197,22,27,1.0)',
+                interactive: true,
+            }
+            }
+            if (feature.properties['PD_2021'] >= 195.000000 && feature.properties['PD_2021'] <= 1154.000000 ) {
+                return {
+                pane: 'pane_PopulationDensity2021_6',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(103,0,13,1.0)',
+                interactive: true,
+            }
+            }
+        }
+        map.createPane('pane_PopulationDensity2021_6');
+        map.getPane('pane_PopulationDensity2021_6').style.zIndex = 406;
+        map.getPane('pane_PopulationDensity2021_6').style['mix-blend-mode'] = 'normal';
+        var layer_PopulationDensity2021_6 = new L.geoJson(json_PopulationDensity2021_6, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_PopulationDensity2021_6',
+            layerName: 'layer_PopulationDensity2021_6',
+            pane: 'pane_PopulationDensity2021_6',
+            onEachFeature: pop_PopulationDensity2021_6,
+            style: style_PopulationDensity2021_6_0,
+        });
+        bounds_group.addLayer(layer_PopulationDensity2021_6);
+        function pop_PopulationEstimate2021_7(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <th scope="row">ID</th>\
+                        <td>' + (feature.properties['ID'] !== null ? autolinker.link(feature.properties['ID'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">PROVINCE</th>\
+                        <td>' + (feature.properties['PROVINCE'] !== null ? autolinker.link(feature.properties['PROVINCE'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">CODE</th>\
+                        <td>' + (feature.properties['CODE'] !== null ? autolinker.link(feature.properties['CODE'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Shape_Leng</th>\
+                        <td>' + (feature.properties['Shape_Leng'] !== null ? autolinker.link(feature.properties['Shape_Leng'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Shape_Area</th>\
+                        <td>' + (feature.properties['Shape_Area'] !== null ? autolinker.link(feature.properties['Shape_Area'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">District</th>\
+                        <td>' + (feature.properties['District'] !== null ? autolinker.link(feature.properties['District'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Area</th>\
+                        <td>' + (feature.properties['Area'] !== null ? autolinker.link(feature.properties['Area'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Pop_2021</th>\
+                        <td>' + (feature.properties['Pop_2021'] !== null ? autolinker.link(feature.properties['Pop_2021'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Popu_2019</th>\
+                        <td>' + (feature.properties['Popu_2019'] !== null ? autolinker.link(feature.properties['Popu_2019'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Popu_2020</th>\
+                        <td>' + (feature.properties['Popu_2020'] !== null ? autolinker.link(feature.properties['Popu_2020'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Popu_2021</th>\
+                        <td>' + (feature.properties['Popu_2021'] !== null ? autolinker.link(feature.properties['Popu_2021'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">PD_2019</th>\
+                        <td>' + (feature.properties['PD_2019'] !== null ? autolinker.link(feature.properties['PD_2019'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">PD_2020</th>\
+                        <td>' + (feature.properties['PD_2020'] !== null ? autolinker.link(feature.properties['PD_2020'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">PD_2021</th>\
+                        <td>' + (feature.properties['PD_2021'] !== null ? autolinker.link(feature.properties['PD_2021'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_PopulationEstimate2021_7_0(feature) {
+            if (feature.properties['PD_Y2021'] >= 4.591860 && feature.properties['PD_Y2021'] <= 4.591860 ) {
+                return {
+                pane: 'pane_PopulationEstimate2021_7',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,245,240,1.0)',
+                interactive: true,
+            }
+            }
+            if (feature.properties['PD_Y2021'] >= 4.591860 && feature.properties['PD_Y2021'] <= 4.591860 ) {
+                return {
+                pane: 'pane_PopulationEstimate2021_7',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(253,204,184,1.0)',
+                interactive: true,
+            }
+            }
+            if (feature.properties['PD_Y2021'] >= 4.591860 && feature.properties['PD_Y2021'] <= 48.382732 ) {
+                return {
+                pane: 'pane_PopulationEstimate2021_7',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(252,143,111,1.0)',
+                interactive: true,
+            }
+            }
+            if (feature.properties['PD_Y2021'] >= 48.382732 && feature.properties['PD_Y2021'] <= 68.782959 ) {
+                return {
+                pane: 'pane_PopulationEstimate2021_7',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(244,77,55,1.0)',
+                interactive: true,
+            }
+            }
+            if (feature.properties['PD_Y2021'] >= 68.782959 && feature.properties['PD_Y2021'] <= 195.248472 ) {
+                return {
+                pane: 'pane_PopulationEstimate2021_7',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(197,22,27,1.0)',
+                interactive: true,
+            }
+            }
+            if (feature.properties['PD_Y2021'] >= 195.248472 && feature.properties['PD_Y2021'] <= 1154.401143 ) {
+                return {
+                pane: 'pane_PopulationEstimate2021_7',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(103,0,13,1.0)',
+                interactive: true,
+            }
+            }
+        }
+        map.createPane('pane_PopulationEstimate2021_7');
+        map.getPane('pane_PopulationEstimate2021_7').style.zIndex = 407;
+        map.getPane('pane_PopulationEstimate2021_7').style['mix-blend-mode'] = 'normal';
+        var layer_PopulationEstimate2021_7 = new L.geoJson(json_PopulationEstimate2021_7, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_PopulationEstimate2021_7',
+            layerName: 'layer_PopulationEstimate2021_7',
+            pane: 'pane_PopulationEstimate2021_7',
+            onEachFeature: pop_PopulationEstimate2021_7,
+            style: style_PopulationEstimate2021_7_0,
+        });
+        bounds_group.addLayer(layer_PopulationEstimate2021_7);
+        function pop_YearlyCases2020_8(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <th scope="row">ID</th>\
+                        <td>' + (feature.properties['ID'] !== null ? autolinker.link(feature.properties['ID'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">PROVINCE</th>\
+                        <td>' + (feature.properties['PROVINCE'] !== null ? autolinker.link(feature.properties['PROVINCE'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">CODE</th>\
+                        <td>' + (feature.properties['CODE'] !== null ? autolinker.link(feature.properties['CODE'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">TYPE</th>\
+                        <td>' + (feature.properties['TYPE'] !== null ? autolinker.link(feature.properties['TYPE'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Shape_Leng</th>\
+                        <td>' + (feature.properties['Shape_Leng'] !== null ? autolinker.link(feature.properties['Shape_Leng'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Cases_2020</th>\
+                        <td>' + (feature.properties['Cases_2020'] !== null ? autolinker.link(feature.properties['Cases_2020'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Cases_2021</th>\
+                        <td>' + (feature.properties['Cases_2021'] !== null ? autolinker.link(feature.properties['Cases_2021'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Cases_2022</th>\
+                        <td>' + (feature.properties['Cases_2022'] !== null ? autolinker.link(feature.properties['Cases_2022'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Total</th>\
+                        <td>' + (feature.properties['Total'] !== null ? autolinker.link(feature.properties['Total'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_YearlyCases2020_8_0(feature) {
+            if (feature.properties['Cases_2020'] >= 2623949.000000 && feature.properties['Cases_2020'] <= 2623949.000000 ) {
+                return {
+                pane: 'pane_YearlyCases2020_8',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(43,131,186,1.0)',
+                interactive: true,
+            }
+            }
+            if (feature.properties['Cases_2020'] >= 2623949.000000 && feature.properties['Cases_2020'] <= 4461372.000000 ) {
+                return {
+                pane: 'pane_YearlyCases2020_8',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(171,221,164,1.0)',
+                interactive: true,
+            }
+            }
+            if (feature.properties['Cases_2020'] >= 4461372.000000 && feature.properties['Cases_2020'] <= 7800374.000000 ) {
+                return {
+                pane: 'pane_YearlyCases2020_8',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,255,191,1.0)',
+                interactive: true,
+            }
+            }
+            if (feature.properties['Cases_2020'] >= 7800374.000000 && feature.properties['Cases_2020'] <= 22940511.000000 ) {
+                return {
+                pane: 'pane_YearlyCases2020_8',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(253,174,97,1.0)',
+                interactive: true,
+            }
+            }
+            if (feature.properties['Cases_2020'] >= 22940511.000000 && feature.properties['Cases_2020'] <= 38524443.000000 ) {
+                return {
+                pane: 'pane_YearlyCases2020_8',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(215,25,28,1.0)',
+                interactive: true,
+            }
+            }
+        }
+        map.createPane('pane_YearlyCases2020_8');
+        map.getPane('pane_YearlyCases2020_8').style.zIndex = 408;
+        map.getPane('pane_YearlyCases2020_8').style['mix-blend-mode'] = 'normal';
+        var layer_YearlyCases2020_8 = new L.geoJson(json_YearlyCases2020_8, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_YearlyCases2020_8',
+            layerName: 'layer_YearlyCases2020_8',
+            pane: 'pane_YearlyCases2020_8',
+            onEachFeature: pop_YearlyCases2020_8,
+            style: style_YearlyCases2020_8_0,
+        });
+        bounds_group.addLayer(layer_YearlyCases2020_8);
+        function pop_YearlyCases2021_9(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <th scope="row">ID</th>\
+                        <td>' + (feature.properties['ID'] !== null ? autolinker.link(feature.properties['ID'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">PROVINCE</th>\
+                        <td>' + (feature.properties['PROVINCE'] !== null ? autolinker.link(feature.properties['PROVINCE'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">CODE</th>\
+                        <td>' + (feature.properties['CODE'] !== null ? autolinker.link(feature.properties['CODE'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">TYPE</th>\
+                        <td>' + (feature.properties['TYPE'] !== null ? autolinker.link(feature.properties['TYPE'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Shape_Leng</th>\
+                        <td>' + (feature.properties['Shape_Leng'] !== null ? autolinker.link(feature.properties['Shape_Leng'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Cases_2020</th>\
+                        <td>' + (feature.properties['Cases_2020'] !== null ? autolinker.link(feature.properties['Cases_2020'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Cases_2021</th>\
+                        <td>' + (feature.properties['Cases_2021'] !== null ? autolinker.link(feature.properties['Cases_2021'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Cases_2022</th>\
+                        <td>' + (feature.properties['Cases_2022'] !== null ? autolinker.link(feature.properties['Cases_2022'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Total</th>\
+                        <td>' + (feature.properties['Total'] !== null ? autolinker.link(feature.properties['Total'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_YearlyCases2021_9_0(feature) {
+            if (feature.properties['Cases_2021'] >= 22607472.000000 && feature.properties['Cases_2021'] <= 22607472.000000 ) {
+                return {
+                pane: 'pane_YearlyCases2021_9',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(43,131,186,1.0)',
+                interactive: true,
+            }
+            }
+            if (feature.properties['Cases_2021'] >= 22607472.000000 && feature.properties['Cases_2021'] <= 32841106.000000 ) {
+                return {
+                pane: 'pane_YearlyCases2021_9',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(171,221,164,1.0)',
+                interactive: true,
+            }
+            }
+            if (feature.properties['Cases_2021'] >= 32841106.000000 && feature.properties['Cases_2021'] <= 85437519.000000 ) {
+                return {
+                pane: 'pane_YearlyCases2021_9',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,255,191,1.0)',
+                interactive: true,
+            }
+            }
+            if (feature.properties['Cases_2021'] >= 85437519.000000 && feature.properties['Cases_2021'] <= 147671556.000000 ) {
+                return {
+                pane: 'pane_YearlyCases2021_9',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(253,174,97,1.0)',
+                interactive: true,
+            }
+            }
+            if (feature.properties['Cases_2021'] >= 147671556.000000 && feature.properties['Cases_2021'] <= 245574382.000000 ) {
+                return {
+                pane: 'pane_YearlyCases2021_9',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(215,25,28,1.0)',
+                interactive: true,
+            }
+            }
+        }
+        map.createPane('pane_YearlyCases2021_9');
+        map.getPane('pane_YearlyCases2021_9').style.zIndex = 409;
+        map.getPane('pane_YearlyCases2021_9').style['mix-blend-mode'] = 'normal';
+        var layer_YearlyCases2021_9 = new L.geoJson(json_YearlyCases2021_9, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_YearlyCases2021_9',
+            layerName: 'layer_YearlyCases2021_9',
+            pane: 'pane_YearlyCases2021_9',
+            onEachFeature: pop_YearlyCases2021_9,
+            style: style_YearlyCases2021_9_0,
+        });
+        bounds_group.addLayer(layer_YearlyCases2021_9);
+        function pop_HalfYearlyCases2022_10(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <th scope="row">ID</th>\
+                        <td>' + (feature.properties['ID'] !== null ? autolinker.link(feature.properties['ID'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">PROVINCE</th>\
+                        <td>' + (feature.properties['PROVINCE'] !== null ? autolinker.link(feature.properties['PROVINCE'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">CODE</th>\
+                        <td>' + (feature.properties['CODE'] !== null ? autolinker.link(feature.properties['CODE'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">TYPE</th>\
+                        <td>' + (feature.properties['TYPE'] !== null ? autolinker.link(feature.properties['TYPE'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Shape_Leng</th>\
+                        <td>' + (feature.properties['Shape_Leng'] !== null ? autolinker.link(feature.properties['Shape_Leng'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Cases_2020</th>\
+                        <td>' + (feature.properties['Cases_2020'] !== null ? autolinker.link(feature.properties['Cases_2020'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Cases_2021</th>\
+                        <td>' + (feature.properties['Cases_2021'] !== null ? autolinker.link(feature.properties['Cases_2021'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Cases_2022</th>\
+                        <td>' + (feature.properties['Cases_2022'] !== null ? autolinker.link(feature.properties['Cases_2022'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Total</th>\
+                        <td>' + (feature.properties['Total'] !== null ? autolinker.link(feature.properties['Total'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_HalfYearlyCases2022_10_0(feature) {
+            if (feature.properties['Cases_2022'] >= 21906757.000000 && feature.properties['Cases_2022'] <= 21906757.000000 ) {
+                return {
+                pane: 'pane_HalfYearlyCases2022_10',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(43,131,186,1.0)',
+                interactive: true,
+            }
+            }
+            if (feature.properties['Cases_2022'] >= 21906757.000000 && feature.properties['Cases_2022'] <= 30844874.000000 ) {
+                return {
+                pane: 'pane_HalfYearlyCases2022_10',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(171,221,164,1.0)',
+                interactive: true,
+            }
+            }
+            if (feature.properties['Cases_2022'] >= 30844874.000000 && feature.properties['Cases_2022'] <= 69525506.000000 ) {
+                return {
+                pane: 'pane_HalfYearlyCases2022_10',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,255,191,1.0)',
+                interactive: true,
+            }
+            }
+            if (feature.properties['Cases_2022'] >= 69525506.000000 && feature.properties['Cases_2022'] <= 134067850.000000 ) {
+                return {
+                pane: 'pane_HalfYearlyCases2022_10',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(253,174,97,1.0)',
+                interactive: true,
+            }
+            }
+            if (feature.properties['Cases_2022'] >= 134067850.000000 && feature.properties['Cases_2022'] <= 245833060.000000 ) {
+                return {
+                pane: 'pane_HalfYearlyCases2022_10',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(215,25,28,1.0)',
+                interactive: true,
+            }
+            }
+        }
+        map.createPane('pane_HalfYearlyCases2022_10');
+        map.getPane('pane_HalfYearlyCases2022_10').style.zIndex = 410;
+        map.getPane('pane_HalfYearlyCases2022_10').style['mix-blend-mode'] = 'normal';
+        var layer_HalfYearlyCases2022_10 = new L.geoJson(json_HalfYearlyCases2022_10, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_HalfYearlyCases2022_10',
+            layerName: 'layer_HalfYearlyCases2022_10',
+            pane: 'pane_HalfYearlyCases2022_10',
+            onEachFeature: pop_HalfYearlyCases2022_10,
+            style: style_HalfYearlyCases2022_10_0,
+        });
+        bounds_group.addLayer(layer_HalfYearlyCases2022_10);
+        map.addLayer(layer_HalfYearlyCases2022_10);
+        function pop_KZNCovid19July2020_11(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
                     <tr>\
                         <th scope="row">DistrictMu</th>\
                         <td>' + (feature.properties['DistrictMu'] !== null ? autolinker.link(feature.properties['DistrictMu'].toLocaleString()) : '') + '</td>\
@@ -1363,10 +1731,6 @@
                     <tr>\
                         <th scope="row">District_1</th>\
                         <td>' + (feature.properties['District_1'] !== null ? autolinker.link(feature.properties['District_1'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">CodeDescri</th>\
-                        <td>' + (feature.properties['CodeDescri'] !== null ? autolinker.link(feature.properties['CodeDescri'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">ProvinceNa</th>\
@@ -1377,32 +1741,8 @@
                         <td>' + (feature.properties['PROVINCE'] !== null ? autolinker.link(feature.properties['PROVINCE'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">CAT2</th>\
-                        <td>' + (feature.properties['CAT2'] !== null ? autolinker.link(feature.properties['CAT2'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">CAT_B</th>\
-                        <td>' + (feature.properties['CAT_B'] !== null ? autolinker.link(feature.properties['CAT_B'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">MUNICNAME</th>\
-                        <td>' + (feature.properties['MUNICNAME'] !== null ? autolinker.link(feature.properties['MUNICNAME'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">NAMECODE</th>\
-                        <td>' + (feature.properties['NAMECODE'] !== null ? autolinker.link(feature.properties['NAMECODE'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">DISTRICT</th>\
-                        <td>' + (feature.properties['DISTRICT'] !== null ? autolinker.link(feature.properties['DISTRICT'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
                         <th scope="row">DISTRICT_N</th>\
                         <td>' + (feature.properties['DISTRICT_N'] !== null ? autolinker.link(feature.properties['DISTRICT_N'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">Dember_202</th>\
-                        <td>' + (feature.properties['Dember_202'] !== null ? autolinker.link(feature.properties['Dember_202'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">July_2021</th>\
@@ -1413,21 +1753,25 @@
                         <td>' + (feature.properties['Jan_2021'] !== null ? autolinker.link(feature.properties['Jan_2021'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">August_202</th>\
-                        <td>' + (feature.properties['August_202'] !== null ? autolinker.link(feature.properties['August_202'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
                         <th scope="row">July_2020</th>\
                         <td>' + (feature.properties['July_2020'] !== null ? autolinker.link(feature.properties['July_2020'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Dec_2021</th>\
+                        <td>' + (feature.properties['Dec_2021'] !== null ? autolinker.link(feature.properties['Dec_2021'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Aug_2021</th>\
+                        <td>' + (feature.properties['Aug_2021'] !== null ? autolinker.link(feature.properties['Aug_2021'].toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_KZNCovid19July2020_8_0(feature) {
+        function style_KZNCovid19July2020_11_0(feature) {
             if (feature.properties['July_2020'] >= 996.000000 && feature.properties['July_2020'] <= 996.000000 ) {
                 return {
-                pane: 'pane_KZNCovid19July2020_8',
+                pane: 'pane_KZNCovid19July2020_11',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -1442,7 +1786,7 @@
             }
             if (feature.properties['July_2020'] >= 996.000000 && feature.properties['July_2020'] <= 1508.000000 ) {
                 return {
-                pane: 'pane_KZNCovid19July2020_8',
+                pane: 'pane_KZNCovid19July2020_11',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -1457,7 +1801,7 @@
             }
             if (feature.properties['July_2020'] >= 1508.000000 && feature.properties['July_2020'] <= 3756.000000 ) {
                 return {
-                pane: 'pane_KZNCovid19July2020_8',
+                pane: 'pane_KZNCovid19July2020_11',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -1472,7 +1816,7 @@
             }
             if (feature.properties['July_2020'] >= 3756.000000 && feature.properties['July_2020'] <= 9307.000000 ) {
                 return {
-                pane: 'pane_KZNCovid19July2020_8',
+                pane: 'pane_KZNCovid19July2020_11',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -1487,7 +1831,7 @@
             }
             if (feature.properties['July_2020'] >= 9307.000000 && feature.properties['July_2020'] <= 31175.000000 ) {
                 return {
-                pane: 'pane_KZNCovid19July2020_8',
+                pane: 'pane_KZNCovid19July2020_11',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -1501,21 +1845,20 @@
             }
             }
         }
-        map.createPane('pane_KZNCovid19July2020_8');
-        map.getPane('pane_KZNCovid19July2020_8').style.zIndex = 408;
-        map.getPane('pane_KZNCovid19July2020_8').style['mix-blend-mode'] = 'normal';
-        var layer_KZNCovid19July2020_8 = new L.geoJson(json_KZNCovid19July2020_8, {
+        map.createPane('pane_KZNCovid19July2020_11');
+        map.getPane('pane_KZNCovid19July2020_11').style.zIndex = 411;
+        map.getPane('pane_KZNCovid19July2020_11').style['mix-blend-mode'] = 'normal';
+        var layer_KZNCovid19July2020_11 = new L.geoJson(json_KZNCovid19July2020_11, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_KZNCovid19July2020_8',
-            layerName: 'layer_KZNCovid19July2020_8',
-            pane: 'pane_KZNCovid19July2020_8',
-            onEachFeature: pop_KZNCovid19July2020_8,
-            style: style_KZNCovid19July2020_8_0,
+            dataVar: 'json_KZNCovid19July2020_11',
+            layerName: 'layer_KZNCovid19July2020_11',
+            pane: 'pane_KZNCovid19July2020_11',
+            onEachFeature: pop_KZNCovid19July2020_11,
+            style: style_KZNCovid19July2020_11_0,
         });
-        bounds_group.addLayer(layer_KZNCovid19July2020_8);
-        map.addLayer(layer_KZNCovid19July2020_8);
-        function pop_Provinces_9(feature, layer) {
+        bounds_group.addLayer(layer_KZNCovid19July2020_11);
+        function pop_KZNCovid19Jan2021_12(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (i in e.target._eventParents) {
@@ -1533,53 +1876,442 @@
             });
             var popupContent = '<table>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['ID'] !== null ? autolinker.link(feature.properties['ID'].toLocaleString()) : '') + '</td>\
+                        <th scope="row">DistrictMu</th>\
+                        <td>' + (feature.properties['DistrictMu'] !== null ? autolinker.link(feature.properties['DistrictMu'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['PROVINCE'] !== null ? autolinker.link(feature.properties['PROVINCE'].toLocaleString()) : '') + '</td>\
+                        <th scope="row">District_1</th>\
+                        <td>' + (feature.properties['District_1'] !== null ? autolinker.link(feature.properties['District_1'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['CODE'] !== null ? autolinker.link(feature.properties['CODE'].toLocaleString()) : '') + '</td>\
+                        <th scope="row">ProvinceNa</th>\
+                        <td>' + (feature.properties['ProvinceNa'] !== null ? autolinker.link(feature.properties['ProvinceNa'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['TYPE'] !== null ? autolinker.link(feature.properties['TYPE'].toLocaleString()) : '') + '</td>\
+                        <th scope="row">PROVINCE</th>\
+                        <td>' + (feature.properties['PROVINCE'] !== null ? autolinker.link(feature.properties['PROVINCE'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Shape_Leng'] !== null ? autolinker.link(feature.properties['Shape_Leng'].toLocaleString()) : '') + '</td>\
+                        <th scope="row">DISTRICT_N</th>\
+                        <td>' + (feature.properties['DISTRICT_N'] !== null ? autolinker.link(feature.properties['DISTRICT_N'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">July_2021</th>\
+                        <td>' + (feature.properties['July_2021'] !== null ? autolinker.link(feature.properties['July_2021'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Jan_2021</th>\
+                        <td>' + (feature.properties['Jan_2021'] !== null ? autolinker.link(feature.properties['Jan_2021'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">July_2020</th>\
+                        <td>' + (feature.properties['July_2020'] !== null ? autolinker.link(feature.properties['July_2020'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Dec_2021</th>\
+                        <td>' + (feature.properties['Dec_2021'] !== null ? autolinker.link(feature.properties['Dec_2021'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Aug_2021</th>\
+                        <td>' + (feature.properties['Aug_2021'] !== null ? autolinker.link(feature.properties['Aug_2021'].toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_Provinces_9_0() {
-            return {
-                pane: 'pane_Provinces_9',
+        function style_KZNCovid19Jan2021_12_0(feature) {
+            if (feature.properties['Jan_2021'] >= 3230.000000 && feature.properties['Jan_2021'] <= 3378.000000 ) {
+                return {
+                pane: 'pane_KZNCovid19Jan2021_12',
                 opacity: 1,
-                color: 'rgba(34,65,222,1.0)',
+                color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(146,146,146,1.0)',
-                interactive: false,
+                fillColor: 'rgba(43,131,186,1.0)',
+                interactive: true,
+            }
+            }
+            if (feature.properties['Jan_2021'] >= 3378.000000 && feature.properties['Jan_2021'] <= 6075.000000 ) {
+                return {
+                pane: 'pane_KZNCovid19Jan2021_12',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(171,221,164,1.0)',
+                interactive: true,
+            }
+            }
+            if (feature.properties['Jan_2021'] >= 6075.000000 && feature.properties['Jan_2021'] <= 8356.000000 ) {
+                return {
+                pane: 'pane_KZNCovid19Jan2021_12',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,255,191,1.0)',
+                interactive: true,
+            }
+            }
+            if (feature.properties['Jan_2021'] >= 8356.000000 && feature.properties['Jan_2021'] <= 12856.000000 ) {
+                return {
+                pane: 'pane_KZNCovid19Jan2021_12',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(253,174,97,1.0)',
+                interactive: true,
+            }
+            }
+            if (feature.properties['Jan_2021'] >= 12856.000000 && feature.properties['Jan_2021'] <= 51204.000000 ) {
+                return {
+                pane: 'pane_KZNCovid19Jan2021_12',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(215,25,28,1.0)',
+                interactive: true,
+            }
             }
         }
-        map.createPane('pane_Provinces_9');
-        map.getPane('pane_Provinces_9').style.zIndex = 409;
-        map.getPane('pane_Provinces_9').style['mix-blend-mode'] = 'normal';
-        var layer_Provinces_9 = new L.geoJson(json_Provinces_9, {
+        map.createPane('pane_KZNCovid19Jan2021_12');
+        map.getPane('pane_KZNCovid19Jan2021_12').style.zIndex = 412;
+        map.getPane('pane_KZNCovid19Jan2021_12').style['mix-blend-mode'] = 'normal';
+        var layer_KZNCovid19Jan2021_12 = new L.geoJson(json_KZNCovid19Jan2021_12, {
             attribution: '',
-            interactive: false,
-            dataVar: 'json_Provinces_9',
-            layerName: 'layer_Provinces_9',
-            pane: 'pane_Provinces_9',
-            onEachFeature: pop_Provinces_9,
-            style: style_Provinces_9_0,
+            interactive: true,
+            dataVar: 'json_KZNCovid19Jan2021_12',
+            layerName: 'layer_KZNCovid19Jan2021_12',
+            pane: 'pane_KZNCovid19Jan2021_12',
+            onEachFeature: pop_KZNCovid19Jan2021_12,
+            style: style_KZNCovid19Jan2021_12_0,
         });
-        bounds_group.addLayer(layer_Provinces_9);
-        function pop_Hospitals_10(feature, layer) {
+        bounds_group.addLayer(layer_KZNCovid19Jan2021_12);
+        function pop_KZNCovid19July2021_13(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <th scope="row">DistrictMu</th>\
+                        <td>' + (feature.properties['DistrictMu'] !== null ? autolinker.link(feature.properties['DistrictMu'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">District_1</th>\
+                        <td>' + (feature.properties['District_1'] !== null ? autolinker.link(feature.properties['District_1'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">ProvinceNa</th>\
+                        <td>' + (feature.properties['ProvinceNa'] !== null ? autolinker.link(feature.properties['ProvinceNa'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">PROVINCE</th>\
+                        <td>' + (feature.properties['PROVINCE'] !== null ? autolinker.link(feature.properties['PROVINCE'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">DISTRICT_N</th>\
+                        <td>' + (feature.properties['DISTRICT_N'] !== null ? autolinker.link(feature.properties['DISTRICT_N'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">July_2021</th>\
+                        <td>' + (feature.properties['July_2021'] !== null ? autolinker.link(feature.properties['July_2021'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Jan_2021</th>\
+                        <td>' + (feature.properties['Jan_2021'] !== null ? autolinker.link(feature.properties['Jan_2021'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">July_2020</th>\
+                        <td>' + (feature.properties['July_2020'] !== null ? autolinker.link(feature.properties['July_2020'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Dec_2021</th>\
+                        <td>' + (feature.properties['Dec_2021'] !== null ? autolinker.link(feature.properties['Dec_2021'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Aug_2021</th>\
+                        <td>' + (feature.properties['Aug_2021'] !== null ? autolinker.link(feature.properties['Aug_2021'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_KZNCovid19July2021_13_0(feature) {
+            if (feature.properties['July_2021'] >= 317.000000 && feature.properties['July_2021'] <= 317.000000 ) {
+                return {
+                pane: 'pane_KZNCovid19July2021_13',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(43,131,186,1.0)',
+                interactive: true,
+            }
+            }
+            if (feature.properties['July_2021'] >= 317.000000 && feature.properties['July_2021'] <= 1240.000000 ) {
+                return {
+                pane: 'pane_KZNCovid19July2021_13',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(171,221,164,1.0)',
+                interactive: true,
+            }
+            }
+            if (feature.properties['July_2021'] >= 1240.000000 && feature.properties['July_2021'] <= 2108.000000 ) {
+                return {
+                pane: 'pane_KZNCovid19July2021_13',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,255,191,1.0)',
+                interactive: true,
+            }
+            }
+            if (feature.properties['July_2021'] >= 2108.000000 && feature.properties['July_2021'] <= 5777.000000 ) {
+                return {
+                pane: 'pane_KZNCovid19July2021_13',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(253,174,97,1.0)',
+                interactive: true,
+            }
+            }
+            if (feature.properties['July_2021'] >= 5777.000000 && feature.properties['July_2021'] <= 12050.000000 ) {
+                return {
+                pane: 'pane_KZNCovid19July2021_13',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(215,25,28,1.0)',
+                interactive: true,
+            }
+            }
+        }
+        map.createPane('pane_KZNCovid19July2021_13');
+        map.getPane('pane_KZNCovid19July2021_13').style.zIndex = 413;
+        map.getPane('pane_KZNCovid19July2021_13').style['mix-blend-mode'] = 'normal';
+        var layer_KZNCovid19July2021_13 = new L.geoJson(json_KZNCovid19July2021_13, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_KZNCovid19July2021_13',
+            layerName: 'layer_KZNCovid19July2021_13',
+            pane: 'pane_KZNCovid19July2021_13',
+            onEachFeature: pop_KZNCovid19July2021_13,
+            style: style_KZNCovid19July2021_13_0,
+        });
+        bounds_group.addLayer(layer_KZNCovid19July2021_13);
+        function pop_KZNCovid19Aug2021_14(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <th scope="row">DistrictMu</th>\
+                        <td>' + (feature.properties['DistrictMu'] !== null ? autolinker.link(feature.properties['DistrictMu'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">District_1</th>\
+                        <td>' + (feature.properties['District_1'] !== null ? autolinker.link(feature.properties['District_1'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">ProvinceNa</th>\
+                        <td>' + (feature.properties['ProvinceNa'] !== null ? autolinker.link(feature.properties['ProvinceNa'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">PROVINCE</th>\
+                        <td>' + (feature.properties['PROVINCE'] !== null ? autolinker.link(feature.properties['PROVINCE'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">DISTRICT_N</th>\
+                        <td>' + (feature.properties['DISTRICT_N'] !== null ? autolinker.link(feature.properties['DISTRICT_N'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">July_2021</th>\
+                        <td>' + (feature.properties['July_2021'] !== null ? autolinker.link(feature.properties['July_2021'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Jan_2021</th>\
+                        <td>' + (feature.properties['Jan_2021'] !== null ? autolinker.link(feature.properties['Jan_2021'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">July_2020</th>\
+                        <td>' + (feature.properties['July_2020'] !== null ? autolinker.link(feature.properties['July_2020'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Dec_2021</th>\
+                        <td>' + (feature.properties['Dec_2021'] !== null ? autolinker.link(feature.properties['Dec_2021'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Aug_2021</th>\
+                        <td>' + (feature.properties['Aug_2021'] !== null ? autolinker.link(feature.properties['Aug_2021'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_KZNCovid19Aug2021_14_0(feature) {
+            if (feature.properties['Aug_2021'] >= 2190.000000 && feature.properties['Aug_2021'] <= 2190.000000 ) {
+                return {
+                pane: 'pane_KZNCovid19Aug2021_14',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(43,131,186,1.0)',
+                interactive: true,
+            }
+            }
+            if (feature.properties['Aug_2021'] >= 2190.000000 && feature.properties['Aug_2021'] <= 3070.000000 ) {
+                return {
+                pane: 'pane_KZNCovid19Aug2021_14',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(171,221,164,1.0)',
+                interactive: true,
+            }
+            }
+            if (feature.properties['Aug_2021'] >= 3070.000000 && feature.properties['Aug_2021'] <= 5091.000000 ) {
+                return {
+                pane: 'pane_KZNCovid19Aug2021_14',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,255,191,1.0)',
+                interactive: true,
+            }
+            }
+            if (feature.properties['Aug_2021'] >= 5091.000000 && feature.properties['Aug_2021'] <= 13457.000000 ) {
+                return {
+                pane: 'pane_KZNCovid19Aug2021_14',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(253,174,97,1.0)',
+                interactive: true,
+            }
+            }
+            if (feature.properties['Aug_2021'] >= 13457.000000 && feature.properties['Aug_2021'] <= 38669.000000 ) {
+                return {
+                pane: 'pane_KZNCovid19Aug2021_14',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(215,25,28,1.0)',
+                interactive: true,
+            }
+            }
+        }
+        map.createPane('pane_KZNCovid19Aug2021_14');
+        map.getPane('pane_KZNCovid19Aug2021_14').style.zIndex = 414;
+        map.getPane('pane_KZNCovid19Aug2021_14').style['mix-blend-mode'] = 'normal';
+        var layer_KZNCovid19Aug2021_14 = new L.geoJson(json_KZNCovid19Aug2021_14, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_KZNCovid19Aug2021_14',
+            layerName: 'layer_KZNCovid19Aug2021_14',
+            pane: 'pane_KZNCovid19Aug2021_14',
+            onEachFeature: pop_KZNCovid19Aug2021_14,
+            style: style_KZNCovid19Aug2021_14_0,
+        });
+        bounds_group.addLayer(layer_KZNCovid19Aug2021_14);
+        function pop_Hospitals_15(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (i in e.target._eventParents) {
@@ -1616,17 +2348,13 @@
                         <th scope="row">Category</th>\
                         <td>' + (feature.properties['Category'] !== null ? autolinker.link(feature.properties['Category'].toLocaleString()) : '') + '</td>\
                     </tr>\
-                    <tr>\
-                        <th scope="row">Province</th>\
-                        <td>' + (feature.properties['Province'] !== null ? autolinker.link(feature.properties['Province'].toLocaleString()) : '') + '</td>\
-                    </tr>\
                 </table>';
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_Hospitals_10_0() {
+        function style_Hospitals_15_0() {
             return {
-                pane: 'pane_Hospitals_10',
+                pane: 'pane_Hospitals_15',
                 radius: 2.4,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
@@ -1640,26 +2368,26 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_Hospitals_10');
-        map.getPane('pane_Hospitals_10').style.zIndex = 410;
-        map.getPane('pane_Hospitals_10').style['mix-blend-mode'] = 'normal';
-        var layer_Hospitals_10 = new L.geoJson(json_Hospitals_10, {
+        map.createPane('pane_Hospitals_15');
+        map.getPane('pane_Hospitals_15').style.zIndex = 415;
+        map.getPane('pane_Hospitals_15').style['mix-blend-mode'] = 'normal';
+        var layer_Hospitals_15 = new L.geoJson(json_Hospitals_15, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_Hospitals_10',
-            layerName: 'layer_Hospitals_10',
-            pane: 'pane_Hospitals_10',
-            onEachFeature: pop_Hospitals_10,
+            dataVar: 'json_Hospitals_15',
+            layerName: 'layer_Hospitals_15',
+            pane: 'pane_Hospitals_15',
+            onEachFeature: pop_Hospitals_15,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.circleMarker(latlng, style_Hospitals_10_0(feature));
+                return L.circleMarker(latlng, style_Hospitals_15_0(feature));
             },
         });
-        bounds_group.addLayer(layer_Hospitals_10);
-        function pop_Towns_11(feature, layer) {
+        bounds_group.addLayer(layer_Hospitals_15);
+        function pop_Towns_16(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (i in e.target._eventParents) {
@@ -1692,9 +2420,9 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_Towns_11_0() {
+        function style_Towns_16_0() {
             return {
-                pane: 'pane_Towns_11',
+                pane: 'pane_Towns_16',
                 radius: 2.4,
                 opacity: 1,
                 color: 'rgba(83,83,83,1.0)',
@@ -1708,25 +2436,25 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_Towns_11');
-        map.getPane('pane_Towns_11').style.zIndex = 411;
-        map.getPane('pane_Towns_11').style['mix-blend-mode'] = 'normal';
-        var layer_Towns_11 = new L.geoJson(json_Towns_11, {
+        map.createPane('pane_Towns_16');
+        map.getPane('pane_Towns_16').style.zIndex = 416;
+        map.getPane('pane_Towns_16').style['mix-blend-mode'] = 'normal';
+        var layer_Towns_16 = new L.geoJson(json_Towns_16, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_Towns_11',
-            layerName: 'layer_Towns_11',
-            pane: 'pane_Towns_11',
-            onEachFeature: pop_Towns_11,
+            dataVar: 'json_Towns_16',
+            layerName: 'layer_Towns_16',
+            pane: 'pane_Towns_16',
+            onEachFeature: pop_Towns_16,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.circleMarker(latlng, style_Towns_11_0(feature));
+                return L.circleMarker(latlng, style_Towns_16_0(feature));
             },
         });
-        bounds_group.addLayer(layer_Towns_11);
+        bounds_group.addLayer(layer_Towns_16);
         var osmGeocoder = new L.Control.Geocoder({
             collapsed: true,
             position: 'topleft',
@@ -1738,15 +2466,15 @@
         document.getElementsByClassName('leaflet-control-geocoder-icon')[0]
         .title += 'Search for a place';
         var baseMaps = {};
-        L.control.layers(baseMaps,{'<img src="legend/Towns_11.png" /> Towns': layer_Towns_11,'<img src="legend/Hospitals_10.png" /> Hospitals': layer_Hospitals_10,'<img src="legend/Provinces_9.png" /> Provinces': layer_Provinces_9,'KZN Covid-19 July 2020<br /><table><tr><td style="text-align: center;"><img src="legend/KZNCovid19July2020_8_9969960.png" /></td><td>996 - 996</td></tr><tr><td style="text-align: center;"><img src="legend/KZNCovid19July2020_8_99615081.png" /></td><td>996 - 1508</td></tr><tr><td style="text-align: center;"><img src="legend/KZNCovid19July2020_8_150837562.png" /></td><td>1508 - 3756</td></tr><tr><td style="text-align: center;"><img src="legend/KZNCovid19July2020_8_375693073.png" /></td><td>3756 - 9307</td></tr><tr><td style="text-align: center;"><img src="legend/KZNCovid19July2020_8_9307311754.png" /></td><td>9307 - 31175</td></tr></table>': layer_KZNCovid19July2020_8,'KZN Covid-19 January 2021<br /><table><tr><td style="text-align: center;"><img src="legend/KZNCovid19January2021_7_323033780.png" /></td><td>3230 - 3378</td></tr><tr><td style="text-align: center;"><img src="legend/KZNCovid19January2021_7_337860751.png" /></td><td>3378 - 6075</td></tr><tr><td style="text-align: center;"><img src="legend/KZNCovid19January2021_7_607583562.png" /></td><td>6075 - 8356</td></tr><tr><td style="text-align: center;"><img src="legend/KZNCovid19January2021_7_8356128563.png" /></td><td>8356 - 12856</td></tr><tr><td style="text-align: center;"><img src="legend/KZNCovid19January2021_7_12856512044.png" /></td><td>12856 - 51204</td></tr></table>': layer_KZNCovid19January2021_7,'KZN Covid-19 July 2021<br /><table><tr><td style="text-align: center;"><img src="legend/KZNCovid19July2021_6_3173170.png" /></td><td>317 - 317</td></tr><tr><td style="text-align: center;"><img src="legend/KZNCovid19July2021_6_31712401.png" /></td><td>317 - 1240</td></tr><tr><td style="text-align: center;"><img src="legend/KZNCovid19July2021_6_124021082.png" /></td><td>1240 - 2108</td></tr><tr><td style="text-align: center;"><img src="legend/KZNCovid19July2021_6_210857773.png" /></td><td>2108 - 5777</td></tr><tr><td style="text-align: center;"><img src="legend/KZNCovid19July2021_6_5777120504.png" /></td><td>5777 - 12050</td></tr></table>': layer_KZNCovid19July2021_6,'KZN Covid-19 August 2021<br /><table><tr><td style="text-align: center;"><img src="legend/KZNCovid19August2021_5_219021900.png" /></td><td>2190 - 2190</td></tr><tr><td style="text-align: center;"><img src="legend/KZNCovid19August2021_5_219030701.png" /></td><td>2190 - 3070</td></tr><tr><td style="text-align: center;"><img src="legend/KZNCovid19August2021_5_307050912.png" /></td><td>3070 - 5091</td></tr><tr><td style="text-align: center;"><img src="legend/KZNCovid19August2021_5_5091134573.png" /></td><td>5091 - 13457</td></tr><tr><td style="text-align: center;"><img src="legend/KZNCovid19August2021_5_13457386694.png" /></td><td>13457 - 38669</td></tr></table>': layer_KZNCovid19August2021_5,'Population 2018<br /><table><tr><td style="text-align: center;"><img src="legend/Population2018_4_742472867850.png" /></td><td>74247 - 286785</td></tr><tr><td style="text-align: center;"><img src="legend/Population2018_4_2867856576131.png" /></td><td>286785 - 657613</td></tr><tr><td style="text-align: center;"><img src="legend/Population2018_4_6576139711352.png" /></td><td>657613 - 971135</td></tr><tr><td style="text-align: center;"><img src="legend/Population2018_4_97113517549303.png" /></td><td>971135 - 1754930</td></tr><tr><td style="text-align: center;"><img src="legend/Population2018_4_175493040050164.png" /></td><td>1754930 - 4005016</td></tr><tr><td style="text-align: center;"><img src="legend/Population2018_4_400501649493475.png" /></td><td>4005016 - 4949347</td></tr></table>': layer_Population2018_4,'Population Density 2018<br /><table><tr><td style="text-align: center;"><img src="legend/PopulationDensity2018_3_1420.png" /></td><td>1 - 42</td></tr><tr><td style="text-align: center;"><img src="legend/PopulationDensity2018_3_421201.png" /></td><td>42 - 120</td></tr><tr><td style="text-align: center;"><img src="legend/PopulationDensity2018_3_1203042.png" /></td><td>120 - 304</td></tr><tr><td style="text-align: center;"><img src="legend/PopulationDensity2018_3_3046453.png" /></td><td>304 - 645</td></tr><tr><td style="text-align: center;"><img src="legend/PopulationDensity2018_3_64517114.png" /></td><td>645 - 1711</td></tr><tr><td style="text-align: center;"><img src="legend/PopulationDensity2018_3_171130095.png" /></td><td>1711 - 3009</td></tr></table>': layer_PopulationDensity2018_3,'Population Estimate 2021<br /><table><tr><td style="text-align: center;"><img src="legend/PopulationEstimate2021_2_550.png" /></td><td>5 - 5</td></tr><tr><td style="text-align: center;"><img src="legend/PopulationEstimate2021_2_551.png" /></td><td>5 - 5</td></tr><tr><td style="text-align: center;"><img src="legend/PopulationEstimate2021_2_5482.png" /></td><td>5 - 48</td></tr><tr><td style="text-align: center;"><img src="legend/PopulationEstimate2021_2_48693.png" /></td><td>48 - 69</td></tr><tr><td style="text-align: center;"><img src="legend/PopulationEstimate2021_2_691954.png" /></td><td>69 - 195</td></tr><tr><td style="text-align: center;"><img src="legend/PopulationEstimate2021_2_19511545.png" /></td><td>195 - 1154</td></tr></table>': layer_PopulationEstimate2021_2,'Population Density 2021<br /><table><tr><td style="text-align: center;"><img src="legend/PopulationDensity2021_1_550.png" /></td><td>5 - 5</td></tr><tr><td style="text-align: center;"><img src="legend/PopulationDensity2021_1_551.png" /></td><td>5 - 5</td></tr><tr><td style="text-align: center;"><img src="legend/PopulationDensity2021_1_5482.png" /></td><td>5 - 48</td></tr><tr><td style="text-align: center;"><img src="legend/PopulationDensity2021_1_48693.png" /></td><td>48 - 69</td></tr><tr><td style="text-align: center;"><img src="legend/PopulationDensity2021_1_691954.png" /></td><td>69 - 195</td></tr><tr><td style="text-align: center;"><img src="legend/PopulationDensity2021_1_19511545.png" /></td><td>195 - 1154</td></tr></table>': layer_PopulationDensity2021_1,"OSM Standard": layer_OSMStandard_0,}).addTo(map);L.control.scale({position: 'bottomleft', maxWidth: 100, metric: true, imperial: false, updateWhenIdle: false}).addTo(map);
+        L.control.layers(baseMaps,{'<img src="legend/Towns_16.png" /> Towns': layer_Towns_16,'<img src="legend/Hospitals_15.png" /> Hospitals': layer_Hospitals_15,'KZN Covid-19 Aug 2021<br /><table><tr><td style="text-align: center;"><img src="legend/KZNCovid19Aug2021_14_219021900.png" /></td><td>2190 - 2190</td></tr><tr><td style="text-align: center;"><img src="legend/KZNCovid19Aug2021_14_219030701.png" /></td><td>2190 - 3070</td></tr><tr><td style="text-align: center;"><img src="legend/KZNCovid19Aug2021_14_307050912.png" /></td><td>3070 - 5091</td></tr><tr><td style="text-align: center;"><img src="legend/KZNCovid19Aug2021_14_5091134573.png" /></td><td>5091 - 13457</td></tr><tr><td style="text-align: center;"><img src="legend/KZNCovid19Aug2021_14_13457386694.png" /></td><td>13457 - 38669</td></tr></table>': layer_KZNCovid19Aug2021_14,'KZN Covid-19 July 2021<br /><table><tr><td style="text-align: center;"><img src="legend/KZNCovid19July2021_13_3173170.png" /></td><td>317 - 317</td></tr><tr><td style="text-align: center;"><img src="legend/KZNCovid19July2021_13_31712401.png" /></td><td>317 - 1240</td></tr><tr><td style="text-align: center;"><img src="legend/KZNCovid19July2021_13_124021082.png" /></td><td>1240 - 2108</td></tr><tr><td style="text-align: center;"><img src="legend/KZNCovid19July2021_13_210857773.png" /></td><td>2108 - 5777</td></tr><tr><td style="text-align: center;"><img src="legend/KZNCovid19July2021_13_5777120504.png" /></td><td>5777 - 12050</td></tr></table>': layer_KZNCovid19July2021_13,'KZN Covid-19 Jan 2021<br /><table><tr><td style="text-align: center;"><img src="legend/KZNCovid19Jan2021_12_323033780.png" /></td><td>3230 - 3378</td></tr><tr><td style="text-align: center;"><img src="legend/KZNCovid19Jan2021_12_337860751.png" /></td><td>3378 - 6075</td></tr><tr><td style="text-align: center;"><img src="legend/KZNCovid19Jan2021_12_607583562.png" /></td><td>6075 - 8356</td></tr><tr><td style="text-align: center;"><img src="legend/KZNCovid19Jan2021_12_8356128563.png" /></td><td>8356 - 12856</td></tr><tr><td style="text-align: center;"><img src="legend/KZNCovid19Jan2021_12_12856512044.png" /></td><td>12856 - 51204</td></tr></table>': layer_KZNCovid19Jan2021_12,'KZN Covid-19 July 2020<br /><table><tr><td style="text-align: center;"><img src="legend/KZNCovid19July2020_11_9969960.png" /></td><td>996 - 996</td></tr><tr><td style="text-align: center;"><img src="legend/KZNCovid19July2020_11_99615081.png" /></td><td>996 - 1508</td></tr><tr><td style="text-align: center;"><img src="legend/KZNCovid19July2020_11_150837562.png" /></td><td>1508 - 3756</td></tr><tr><td style="text-align: center;"><img src="legend/KZNCovid19July2020_11_375693073.png" /></td><td>3756 - 9307</td></tr><tr><td style="text-align: center;"><img src="legend/KZNCovid19July2020_11_9307311754.png" /></td><td>9307 - 31175</td></tr></table>': layer_KZNCovid19July2020_11,'Half Yearly Cases 2022<br /><table><tr><td style="text-align: center;"><img src="legend/HalfYearlyCases2022_10_21906757219067570.png" /></td><td>21906757 - 21906757</td></tr><tr><td style="text-align: center;"><img src="legend/HalfYearlyCases2022_10_21906757308448741.png" /></td><td>21906757 - 30844874</td></tr><tr><td style="text-align: center;"><img src="legend/HalfYearlyCases2022_10_30844874695255062.png" /></td><td>30844874 - 69525506</td></tr><tr><td style="text-align: center;"><img src="legend/HalfYearlyCases2022_10_695255061340678503.png" /></td><td>69525506 - 134067850</td></tr><tr><td style="text-align: center;"><img src="legend/HalfYearlyCases2022_10_1340678502458330604.png" /></td><td>134067850 - 245833060</td></tr></table>': layer_HalfYearlyCases2022_10,' Yearly Cases 2021<br /><table><tr><td style="text-align: center;"><img src="legend/YearlyCases2021_9_22607472226074720.png" /></td><td>22607472 - 22607472</td></tr><tr><td style="text-align: center;"><img src="legend/YearlyCases2021_9_22607472328411061.png" /></td><td>22607472 - 32841106</td></tr><tr><td style="text-align: center;"><img src="legend/YearlyCases2021_9_32841106854375192.png" /></td><td>32841106 - 85437519</td></tr><tr><td style="text-align: center;"><img src="legend/YearlyCases2021_9_854375191476715563.png" /></td><td>85437519 - 147671556</td></tr><tr><td style="text-align: center;"><img src="legend/YearlyCases2021_9_1476715562455743824.png" /></td><td>147671556 - 245574382</td></tr></table>': layer_YearlyCases2021_9,'Yearly Cases 2020<br /><table><tr><td style="text-align: center;"><img src="legend/YearlyCases2020_8_262394926239490.png" /></td><td>2623949 - 2623949</td></tr><tr><td style="text-align: center;"><img src="legend/YearlyCases2020_8_262394944613721.png" /></td><td>2623949 - 4461372</td></tr><tr><td style="text-align: center;"><img src="legend/YearlyCases2020_8_446137278003742.png" /></td><td>4461372 - 7800374</td></tr><tr><td style="text-align: center;"><img src="legend/YearlyCases2020_8_7800374229405113.png" /></td><td>7800374 - 22940511</td></tr><tr><td style="text-align: center;"><img src="legend/YearlyCases2020_8_22940511385244434.png" /></td><td>22940511 - 38524443</td></tr></table>': layer_YearlyCases2020_8,'Population Estimate 2021<br /><table><tr><td style="text-align: center;"><img src="legend/PopulationEstimate2021_7_550.png" /></td><td>5 - 5</td></tr><tr><td style="text-align: center;"><img src="legend/PopulationEstimate2021_7_551.png" /></td><td>5 - 5</td></tr><tr><td style="text-align: center;"><img src="legend/PopulationEstimate2021_7_5482.png" /></td><td>5 - 48</td></tr><tr><td style="text-align: center;"><img src="legend/PopulationEstimate2021_7_48693.png" /></td><td>48 - 69</td></tr><tr><td style="text-align: center;"><img src="legend/PopulationEstimate2021_7_691954.png" /></td><td>69 - 195</td></tr><tr><td style="text-align: center;"><img src="legend/PopulationEstimate2021_7_19511545.png" /></td><td>195 - 1154</td></tr></table>': layer_PopulationEstimate2021_7,'Population Density 2021<br /><table><tr><td style="text-align: center;"><img src="legend/PopulationDensity2021_6_550.png" /></td><td>5 - 5</td></tr><tr><td style="text-align: center;"><img src="legend/PopulationDensity2021_6_551.png" /></td><td>5 - 5</td></tr><tr><td style="text-align: center;"><img src="legend/PopulationDensity2021_6_5482.png" /></td><td>5 - 48</td></tr><tr><td style="text-align: center;"><img src="legend/PopulationDensity2021_6_48693.png" /></td><td>48 - 69</td></tr><tr><td style="text-align: center;"><img src="legend/PopulationDensity2021_6_691954.png" /></td><td>69 - 195</td></tr><tr><td style="text-align: center;"><img src="legend/PopulationDensity2021_6_19511545.png" /></td><td>195 - 1154</td></tr></table>': layer_PopulationDensity2021_6,'Population Estimate 2020<br /><table><tr><td style="text-align: center;"><img src="legend/PopulationEstimate2020_5_165912116591210.png" /></td><td>1659121 - 1659121</td></tr><tr><td style="text-align: center;"><img src="legend/PopulationEstimate2020_5_165912116591211.png" /></td><td>1659121 - 1659121</td></tr><tr><td style="text-align: center;"><img src="legend/PopulationEstimate2020_5_165912155548532.png" /></td><td>1659121 - 5554853</td></tr><tr><td style="text-align: center;"><img src="legend/PopulationEstimate2020_5_555485387986493.png" /></td><td>5554853 - 8798649</td></tr><tr><td style="text-align: center;"><img src="legend/PopulationEstimate2020_5_8798649106403444.png" /></td><td>8798649 - 10640344</td></tr><tr><td style="text-align: center;"><img src="legend/PopulationEstimate2020_5_10640344192624795.png" /></td><td>10640344 - 19262479</td></tr></table>': layer_PopulationEstimate2020_5,'Population Density 2020<br /><table><tr><td style="text-align: center;"><img src="legend/PopulationDensity2020_4_550.png" /></td><td>5 - 5</td></tr><tr><td style="text-align: center;"><img src="legend/PopulationDensity2020_4_551.png" /></td><td>5 - 5</td></tr><tr><td style="text-align: center;"><img src="legend/PopulationDensity2020_4_5482.png" /></td><td>5 - 48</td></tr><tr><td style="text-align: center;"><img src="legend/PopulationDensity2020_4_48683.png" /></td><td>48 - 68</td></tr><tr><td style="text-align: center;"><img src="legend/PopulationDensity2020_4_681934.png" /></td><td>68 - 193</td></tr><tr><td style="text-align: center;"><img src="legend/PopulationDensity2020_4_19311375.png" /></td><td>193 - 1137</td></tr></table>': layer_PopulationDensity2020_4,'Population 2018<br /><table><tr><td style="text-align: center;"><img src="legend/Population2018_3_742472867850.png" /></td><td>74247 - 286785</td></tr><tr><td style="text-align: center;"><img src="legend/Population2018_3_2867856576131.png" /></td><td>286785 - 657613</td></tr><tr><td style="text-align: center;"><img src="legend/Population2018_3_6576139711352.png" /></td><td>657613 - 971135</td></tr><tr><td style="text-align: center;"><img src="legend/Population2018_3_97113517549303.png" /></td><td>971135 - 1754930</td></tr><tr><td style="text-align: center;"><img src="legend/Population2018_3_175493040050164.png" /></td><td>1754930 - 4005016</td></tr><tr><td style="text-align: center;"><img src="legend/Population2018_3_400501649493475.png" /></td><td>4005016 - 4949347</td></tr></table>': layer_Population2018_3,'Population Density 2018<br /><table><tr><td style="text-align: center;"><img src="legend/PopulationDensity2018_2_1420.png" /></td><td>1 - 42</td></tr><tr><td style="text-align: center;"><img src="legend/PopulationDensity2018_2_421201.png" /></td><td>42 - 120</td></tr><tr><td style="text-align: center;"><img src="legend/PopulationDensity2018_2_1203042.png" /></td><td>120 - 304</td></tr><tr><td style="text-align: center;"><img src="legend/PopulationDensity2018_2_3046453.png" /></td><td>304 - 645</td></tr><tr><td style="text-align: center;"><img src="legend/PopulationDensity2018_2_64517114.png" /></td><td>645 - 1711</td></tr><tr><td style="text-align: center;"><img src="legend/PopulationDensity2018_2_171130095.png" /></td><td>1711 - 3009</td></tr></table>': layer_PopulationDensity2018_2,'<img src="legend/Provinces_1.png" /> Provinces': layer_Provinces_1,"OSM Standard": layer_OSMStandard_0,}).addTo(map);L.control.scale({position: 'bottomleft', maxWidth: 100, metric: true, imperial: false, updateWhenIdle: false}).addTo(map);
         setBounds();
         var i = 0;
-        layer_KZNCovid19August2021_5.eachLayer(function(layer) {
+        layer_Provinces_1.eachLayer(function(layer) {
             var context = {
                 feature: layer.feature,
                 variables: {}
             };
-            layer.bindTooltip((layer.feature.properties['MUNICNAME'] !== null?String('<div style="color: #000000; font-size: 12pt; font-family: \'Rockwell\', sans-serif;">' + layer.feature.properties['MUNICNAME']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_KZNCovid19August2021_5'});
+            layer.bindTooltip((layer.feature.properties['PROVINCE'] !== null?String('<div style="color: #707070; font-size: 18pt; font-style: italic; font-family: \'Rockwell\', sans-serif;">' + layer.feature.properties['PROVINCE']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_Provinces_1'});
             labels.push(layer);
             totalMarkers += 1;
               layer.added = true;
@@ -1754,12 +2482,12 @@
               i++;
         });
         var i = 0;
-        layer_KZNCovid19July2021_6.eachLayer(function(layer) {
+        layer_HalfYearlyCases2022_10.eachLayer(function(layer) {
             var context = {
                 feature: layer.feature,
                 variables: {}
             };
-            layer.bindTooltip((layer.feature.properties['MUNICNAME'] !== null?String('<div style="color: #000000; font-size: 12pt; font-family: \'Rockwell\', sans-serif;">' + layer.feature.properties['MUNICNAME']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_KZNCovid19July2021_6'});
+            layer.bindTooltip((layer.feature.properties['PROVINCE'] !== null?String('<div style="color: #707070; font-size: 10pt; font-family: \'Rockwell\', sans-serif;">' + layer.feature.properties['PROVINCE']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_HalfYearlyCases2022_10'});
             labels.push(layer);
             totalMarkers += 1;
               layer.added = true;
@@ -1767,12 +2495,12 @@
               i++;
         });
         var i = 0;
-        layer_KZNCovid19January2021_7.eachLayer(function(layer) {
+        layer_KZNCovid19July2020_11.eachLayer(function(layer) {
             var context = {
                 feature: layer.feature,
                 variables: {}
             };
-            layer.bindTooltip((layer.feature.properties['MUNICNAME'] !== null?String('<div style="color: #000000; font-size: 12pt; font-family: \'Rockwell\', sans-serif;">' + layer.feature.properties['MUNICNAME']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_KZNCovid19January2021_7'});
+            layer.bindTooltip((layer.feature.properties['DISTRICT_N'] !== null?String('<div style="color: #000000; font-size: 12pt; font-family: \'Rockwell\', sans-serif;">' + layer.feature.properties['DISTRICT_N']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_KZNCovid19July2020_11'});
             labels.push(layer);
             totalMarkers += 1;
               layer.added = true;
@@ -1780,12 +2508,12 @@
               i++;
         });
         var i = 0;
-        layer_KZNCovid19July2020_8.eachLayer(function(layer) {
+        layer_KZNCovid19Jan2021_12.eachLayer(function(layer) {
             var context = {
                 feature: layer.feature,
                 variables: {}
             };
-            layer.bindTooltip((layer.feature.properties['DISTRICT_N'] !== null?String('<div style="color: #000000; font-size: 12pt; font-family: \'Rockwell\', sans-serif;">' + layer.feature.properties['DISTRICT_N']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_KZNCovid19July2020_8'});
+            layer.bindTooltip((layer.feature.properties['DISTRICT_N'] !== null?String('<div style="color: #000000; font-size: 12pt; font-family: \'Rockwell\', sans-serif;">' + layer.feature.properties['DISTRICT_N']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_KZNCovid19Jan2021_12'});
             labels.push(layer);
             totalMarkers += 1;
               layer.added = true;
@@ -1793,12 +2521,25 @@
               i++;
         });
         var i = 0;
-        layer_Provinces_9.eachLayer(function(layer) {
+        layer_KZNCovid19July2021_13.eachLayer(function(layer) {
             var context = {
                 feature: layer.feature,
                 variables: {}
             };
-            layer.bindTooltip((layer.feature.properties['PROVINCE'] !== null?String('<div style="color: #000000; font-size: 10pt; font-style: italic; font-family: \'Rockwell\', sans-serif;">' + layer.feature.properties['PROVINCE']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_Provinces_9'});
+            layer.bindTooltip((layer.feature.properties['DISTRICT_N'] !== null?String('<div style="color: #000000; font-size: 12pt; font-family: \'Rockwell\', sans-serif;">' + layer.feature.properties['DISTRICT_N']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_KZNCovid19July2021_13'});
+            labels.push(layer);
+            totalMarkers += 1;
+              layer.added = true;
+              addLabel(layer, i);
+              i++;
+        });
+        var i = 0;
+        layer_KZNCovid19Aug2021_14.eachLayer(function(layer) {
+            var context = {
+                feature: layer.feature,
+                variables: {}
+            };
+            layer.bindTooltip((layer.feature.properties['DISTRICT_N'] !== null?String('<div style="color: #000000; font-size: 12pt; font-family: \'Rockwell\', sans-serif;">' + layer.feature.properties['DISTRICT_N']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_KZNCovid19Aug2021_14'});
             labels.push(layer);
             totalMarkers += 1;
               layer.added = true;
@@ -1806,21 +2547,21 @@
               i++;
         });
         map.addControl(new L.Control.Search({
-            layer: layer_Population2018_4,
+            layer: layer_Population2018_3,
             initial: false,
             hideMarkerOnCollapse: true,
             propertyName: 'DistrictMu'}));
         document.getElementsByClassName('search-button')[0].className +=
          ' fa fa-binoculars';
-        resetLabels([layer_KZNCovid19August2021_5,layer_KZNCovid19July2021_6,layer_KZNCovid19January2021_7,layer_KZNCovid19July2020_8,layer_Provinces_9]);
+        resetLabels([layer_Provinces_1,layer_HalfYearlyCases2022_10,layer_KZNCovid19July2020_11,layer_KZNCovid19Jan2021_12,layer_KZNCovid19July2021_13,layer_KZNCovid19Aug2021_14]);
         map.on("zoomend", function(){
-            resetLabels([layer_KZNCovid19August2021_5,layer_KZNCovid19July2021_6,layer_KZNCovid19January2021_7,layer_KZNCovid19July2020_8,layer_Provinces_9]);
+            resetLabels([layer_Provinces_1,layer_HalfYearlyCases2022_10,layer_KZNCovid19July2020_11,layer_KZNCovid19Jan2021_12,layer_KZNCovid19July2021_13,layer_KZNCovid19Aug2021_14]);
         });
         map.on("layeradd", function(){
-            resetLabels([layer_KZNCovid19August2021_5,layer_KZNCovid19July2021_6,layer_KZNCovid19January2021_7,layer_KZNCovid19July2020_8,layer_Provinces_9]);
+            resetLabels([layer_Provinces_1,layer_HalfYearlyCases2022_10,layer_KZNCovid19July2020_11,layer_KZNCovid19Jan2021_12,layer_KZNCovid19July2021_13,layer_KZNCovid19Aug2021_14]);
         });
         map.on("layerremove", function(){
-            resetLabels([layer_KZNCovid19August2021_5,layer_KZNCovid19July2021_6,layer_KZNCovid19January2021_7,layer_KZNCovid19July2020_8,layer_Provinces_9]);
+            resetLabels([layer_Provinces_1,layer_HalfYearlyCases2022_10,layer_KZNCovid19July2020_11,layer_KZNCovid19Jan2021_12,layer_KZNCovid19July2021_13,layer_KZNCovid19Aug2021_14]);
         });
         </script>
     </body>
